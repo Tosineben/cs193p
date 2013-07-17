@@ -8,21 +8,46 @@
 
 #import "CardGameViewController.h"
 #import "PlayingCardDeck.h"
+#import "CardMatchingGame.h"
 
 @interface CardGameViewController ()
 
 @property (nonatomic) int flipCount;
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
-@property (strong, nonatomic) Deck *deck;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) CardMatchingGame *game;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 
 @end
 
 @implementation CardGameViewController
 
-- (Deck *)deck
+- (CardMatchingGame *)game
 {
-    if (!_deck) _deck = [[PlayingCardDeck alloc] init];
-    return _deck;
+    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
+                                                          usingDeck:[[PlayingCardDeck alloc] init]];
+    return _game;
+}
+
+- (void)setCardButtons:(NSArray *)cardButtons
+{
+    _cardButtons = cardButtons;
+    [self updateUI];
+}
+
+- (void)updateUI
+{
+    for (int i = 0; i < self.cardButtons.count; i++)
+    {
+        UIButton *cardButton = [self.cardButtons objectAtIndex:i];
+        Card *card = [self.game cardAtIndex:i];
+        [cardButton setTitle:card.contents forState:UIControlStateSelected];
+        [cardButton setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
+        cardButton.selected = card.isFaceUp;
+        cardButton.enabled = !card.isUnplayable;
+        cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
+    }
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
 }
 
 - (void)setFlipCount:(int)flipCount
@@ -33,23 +58,9 @@
 
 - (IBAction)flipCard:(UIButton *)sender
 {
-    sender.selected = !sender.isSelected;
+    [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
-    
-    if (sender.isSelected)
-    {
-        Card *randomCard = [self.deck drawRandomCard];
-        
-        if (randomCard)
-        {
-            [sender setTitle:randomCard.contents forState:UIControlStateSelected];
-        }
-        else
-        {
-            [sender setEnabled:NO];
-            sender.alpha = 0.3;
-        }
-    }
+    [self updateUI];
 }
 
 @end

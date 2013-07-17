@@ -38,6 +38,8 @@
     if ([otherCards count] == 1)
     {
         PlayingCard *otherCard = [otherCards lastObject];
+        
+        // rank match is worth 4x suit match
         if ([otherCard.suit isEqualToString:self.suit])
         {
             score = 1;
