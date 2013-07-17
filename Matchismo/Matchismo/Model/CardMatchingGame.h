@@ -12,7 +12,7 @@
 @interface CardMatchingGame : NSObject
 
 // designated initializer
-- (id)initWithCardCount:(NSUInteger)cardCount
+- (id)initWithCardCount:(NSUInteger)count
               usingDeck:(Deck *)deck;
 
 - (void)flipCardAtIndex:(NSUInteger)index;
@@ -20,5 +20,7 @@
 - (Card *)cardAtIndex:(NSUInteger)index;
 
 @property (nonatomic, readonly) int score;
+@property (nonatomic, readwrite) int numberMatchingCards;
+@property (nonatomic, readonly) NSString *descriptionOfLastFlip;
 
 @end

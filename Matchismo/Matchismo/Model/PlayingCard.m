@@ -30,7 +30,7 @@
     return _suit ? _suit : @"?";
 }
 
-// only matches if 1 other card
+// only matches if 1 or 2 other cards
 - (int)match:(NSArray *)otherCards
 {
     int score = 0;
@@ -39,12 +39,47 @@
     {
         PlayingCard *otherCard = [otherCards lastObject];
         
+        // MEDIUM MATCH
+        
         // rank match is worth 4x suit match
         if ([otherCard.suit isEqualToString:self.suit])
         {
-            score = 1;
+            score = 2;
         }
         else if (otherCard.rank == self.rank)
+        {
+            score = 8;
+        }
+    }
+    else if ([otherCards count] == 2)
+    {
+        PlayingCard *otherCard1 = [otherCards objectAtIndex:0];
+        PlayingCard *otherCard2 = [otherCards objectAtIndex:1];
+        
+        // HARD MATCH
+        
+        if ([otherCard1.suit isEqualToString:self.suit] &&
+            [otherCard2.suit isEqualToString:self.suit])
+        {
+            score = 4;
+        }
+        else if (otherCard1.rank == self.rank &&
+                 otherCard2.rank == self.rank)
+        {
+            score = 16;
+        }
+        
+        // EASY MATCH
+        
+        else if ([otherCard1.suit isEqualToString:self.suit] ||
+                 [otherCard2.suit isEqualToString:self.suit] ||
+                 [otherCard1.suit isEqualToString:otherCard2.suit])
+        {
+            score = 1;
+        }
+        else if (otherCard1.rank == self.rank ||
+                 otherCard2.rank == self.rank ||
+                 otherCard1.rank == otherCard2.rank)
         {
             score = 4;
         }
