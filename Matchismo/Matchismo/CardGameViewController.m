@@ -9,6 +9,7 @@
 #import "CardGameViewController.h"
 #import "PlayingCardDeck.h"
 #import "CardMatchingGame.h"
+#import "GameResult.h"
 
 @interface CardGameViewController ()
 
@@ -21,11 +22,18 @@
 
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) CardMatchingGame *game;
+@property (strong, nonatomic) GameResult *gameResult;
 @property (strong, nonatomic) NSMutableArray *history;
 
 @end
 
 @implementation CardGameViewController
+
+- (GameResult *)gameResult
+{
+    if (!_gameResult) _gameResult = [[GameResult alloc] init];
+    return _gameResult;
+}
 
 - (CardMatchingGame *)game
 {
@@ -61,7 +69,7 @@
         Card *card = [self.game cardAtIndex:i];
 
         // set up card back
-        cardButton.imageEdgeInsets = UIEdgeInsetsMake(1, 1, 1, 1);
+        cardButton.imageEdgeInsets = UIEdgeInsetsMake(1, 5, 1, 5);
         [cardButton setImage:cardBackImage forState:UIControlStateNormal];
         
         // set up card front
@@ -102,6 +110,7 @@
 - (IBAction)deal
 {
     self.game = nil;
+    self.gameResult = nil;
     self.history = nil;
     self.flipCount = 0;
     self.gameModeControl.enabled = YES;
@@ -116,6 +125,7 @@
     self.historySlider.value = self.historySlider.maximumValue;
     [self.history addObject:self.game.descriptionOfLastFlip];
     [self updateUI];
+    self.gameResult.score = self.game.score;
 }
 
 - (IBAction)changeGameMode
