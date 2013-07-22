@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		969D750B179DB45B002D4877 /* cardback.png in Resources */ = {isa = PBXBuildFile; fileRef = 969D7509179DB45B002D4877 /* cardback.png */; };
+		969D750C179DB45B002D4877 /* cardback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969D750A179DB45B002D4877 /* cardback@2x.png */; };
 		96BACBA3179CDEF80009F388 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BACBA2179CDEF80009F388 /* UIKit.framework */; };
 		96BACBA5179CDEF80009F388 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BACBA4179CDEF80009F388 /* Foundation.framework */; };
 		96BACBA7179CDEF80009F388 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BACBA6179CDEF80009F388 /* CoreGraphics.framework */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		969D7509179DB45B002D4877 /* cardback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardback.png; sourceTree = "<group>"; };
+		969D750A179DB45B002D4877 /* cardback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cardback@2x.png"; sourceTree = "<group>"; };
 		96BACB9F179CDEF80009F388 /* SuperCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BACBA2179CDEF80009F388 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		96BACBA4179CDEF80009F388 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -146,7 +150,6 @@
 		96BACBA8179CDEF80009F388 /* SuperCard */ = {
 			isa = PBXGroup;
 			children = (
-				96BACBD5179CE1060009F388 /* PlayingCardFaces */,
 				96BACBD4179CE0FB0009F388 /* Model */,
 				96BACBC5179CDF320009F388 /* PlayingCardView.h */,
 				96BACBC6179CDF320009F388 /* PlayingCardView.m */,
@@ -163,6 +166,9 @@
 		96BACBA9179CDEF80009F388 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				96BACBD5179CE1060009F388 /* PlayingCardFaces */,
+				969D7509179DB45B002D4877 /* cardback.png */,
+				969D750A179DB45B002D4877 /* cardback@2x.png */,
 				96BACBAA179CDEF80009F388 /* SuperCard-Info.plist */,
 				96BACBAB179CDEF80009F388 /* InfoPlist.strings */,
 				96BACBAE179CDEF80009F388 /* main.m */,
@@ -301,6 +307,8 @@
 				96BACC0F179CE1B90009F388 /* Q♥@2x.png in Resources */,
 				96BACC10179CE1B90009F388 /* Q♦.png in Resources */,
 				96BACC11179CE1B90009F388 /* Q♦@2x.png in Resources */,
+				969D750B179DB45B002D4877 /* cardback.png in Resources */,
+				969D750C179DB45B002D4877 /* cardback@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +449,7 @@
 				96BACBC4179CDEF80009F388 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
