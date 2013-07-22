@@ -14,8 +14,6 @@
 @property (nonatomic) int score;
 @property (strong, nonatomic) NSString *descriptionOfLastFlip;
 
-@property (nonatomic) int numberMatchingCards;
-
 @end
 
 @implementation CardMatchingGame

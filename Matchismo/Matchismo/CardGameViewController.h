@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Deck.h"
 
 @interface CardGameViewController : UIViewController
+
+@property (nonatomic) NSUInteger startingCardCount; // abstract
+
+- (Deck *)createDeck; // abstract
+
+- (void)updateCell:(UICollectionViewCell *)cell
+         usingCard:(Card *)card
+           animate:(BOOL)animate; // abstract
 
 @end
