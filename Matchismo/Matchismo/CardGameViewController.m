@@ -86,9 +86,6 @@
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
 
-    NSLog(@"a: %d", [self.history count]);
-    NSLog(@"b: %d", (int)self.historySlider.value);
-    
     if (self.historySlider.value == self.historySlider.minimumValue)
     {
         self.lastFlipLabel.text = @"";
@@ -137,7 +134,6 @@
 {
     self.historySlider.value = roundf(self.historySlider.value);
     [self updateUI];
-    NSLog(@"%d", (int)self.historySlider.value);
 }
 
 - (void)viewDidLoad
