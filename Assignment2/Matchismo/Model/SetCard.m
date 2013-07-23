@@ -82,9 +82,60 @@
     return [NSString stringWithFormat:@"%@:%@:%@:%d", self.symbol, self.color, self.shading, self.number];
 }
 
+#define NUMBER_OF_MATCHING_CARDS 3
+
 - (int)match:(NSArray *)otherCards
 {
-    return [super match:otherCards]; // TODO
+    if ([otherCards count] != NUMBER_OF_MATCHING_CARDS - 1)
+    {
+        return 0;
+    }
+    
+    int score = 0;
+
+    NSMutableArray *colors = [[NSMutableArray alloc] init];
+    NSMutableArray *symbols = [[NSMutableArray alloc] init];
+    NSMutableArray *shadings = [[NSMutableArray alloc] init];
+    NSMutableArray *numbers = [[NSMutableArray alloc] init];
+    
+    [colors addObject:self.color];
+    [symbols addObject:self.symbol];
+    [shadings addObject:self.shading];
+    [numbers addObject:@(self.number)];
+    
+    for (id otherCard in otherCards)
+    {
+        if (![otherCard isKindOfClass:[SetCard class]])
+        {
+            continue;
+        }
+
+        SetCard *otherSetCard = (SetCard *)otherCard;
+        
+        // TODO are there hash sets?
+        
+        if (![colors containsObject:otherSetCard.color])
+            [colors addObject:otherSetCard.color];
+        
+        if (![symbols containsObject:otherSetCard.symbol])
+            [symbols addObject:otherSetCard.symbol];
+        
+        if (![shadings containsObject:otherSetCard.shading])
+            [shadings addObject:otherSetCard.shading];
+        
+        if (![numbers containsObject:@(otherSetCard.number)])
+            [numbers addObject:@(otherSetCard.number)];
+    }
+    
+    if (([colors count] == 1 || [colors count] == NUMBER_OF_MATCHING_CARDS)
+        && ([symbols count] == 1 || [symbols count] == NUMBER_OF_MATCHING_CARDS)
+        && ([shadings count] == 1 || [shadings count] == NUMBER_OF_MATCHING_CARDS)
+        && ([numbers count] == 1 || [numbers count] == NUMBER_OF_MATCHING_CARDS))
+    {
+        score = 4;
+    }
+    
+    return score;
 }
 
 @end

@@ -25,7 +25,7 @@
 
 - (GameSettings *)settings
 {
-    if (!_settings) _settings = [[GameSettings alloc init]];
+    if (!_settings) _settings = [[GameSettings alloc] init];
     return _settings;
 }
 
@@ -85,7 +85,13 @@
 {
     [super viewWillAppear:animated];
     
-    self.matchBonusSlider.value = self.gameSettings
+    self.matchBonusSlider.value = self.settings.matchBonus;
+    self.mismatchPenaltySlider.value = self.settings.mismatchPenalty;
+    self.flipCostSlider.value = self.settings.flipCost;
+    
+    [self setLabel:self.matchBonusLabel forSlider:self.matchBonusSlider];
+    [self setLabel:self.mismatchPenaltyLabel forSlider:self.mismatchPenaltySlider];
+    [self setLabel:self.flipCostLabel forSlider:self.flipCostSlider];
 }
 
 @end

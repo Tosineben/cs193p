@@ -65,23 +65,23 @@
         return;
     }
     
-    // flip card over
-    card.faceUp = !card.isFaceUp;
-    
-    // only match if it's now face up
-    if (!card.isFaceUp)
-    {
-        return;
-    }
-
     NSMutableArray *otherFaceUpCards = [[NSMutableArray alloc] init];
-    
     for (Card *otherCard in self.cards)
     {
         if (otherCard.isFaceUp && !otherCard.isUnplayable)
         {
             [otherFaceUpCards addObject:otherCard];
         }
+    }
+    
+    // flip card over
+    card.faceUp = !card.isFaceUp;
+    
+    // only match if it's now face up
+    if (!card.isFaceUp)
+    {
+        self.descriptionOfLastFlip = @"";
+        return;
     }
     
     // if we don't have enough face up cards yet, do nothing

@@ -50,13 +50,11 @@
     }
     
     self.lastFlipLabel.alpha = self.historySlider.value == self.historySlider.maximumValue ? 1.0 : 0.5;
-    
-    [self updateSliderRange];
 }
 
 - (void)updateSliderRange
 {
-    int maxValue = [self.history count] - 1;
+    int maxValue = [self.history count];
     if (maxValue < 0)
     {
         maxValue = 0;
@@ -71,6 +69,7 @@
     self.history = nil;
     self.flipCount = 0;
     self.gameModeControl.enabled = YES;
+    [self updateSliderRange];
     [self updateUI];
 }
 
@@ -79,14 +78,16 @@
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     self.gameModeControl.enabled = NO;
-    [self.historySlider setValue:self.historySlider.maximumValue animated:YES];
     self.gameResult.score = self.game.score;
     
     // add history if there is a new one
-    if (![[self.history lastObject] isEqualToString:self.game.descriptionOfLastFlip])
+    if (![@"" isEqualToString:self.game.descriptionOfLastFlip])
     {
         [self.history addObject:self.game.descriptionOfLastFlip];
     }
+
+    [self updateSliderRange];
+    [self.historySlider setValue:self.historySlider.maximumValue animated:YES];
     
     [self updateUI];
 }

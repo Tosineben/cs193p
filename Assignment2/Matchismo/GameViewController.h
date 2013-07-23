@@ -33,11 +33,11 @@
 @property (strong, nonatomic) GameSettings *gameSettings;
 
 - (void)updateUI;
+- (void)updateSliderRange;
 
 - (IBAction)flipCard:(UIButton *)sender;
-- (IBAction)dealButtonPressed:(UIButton *)sender;
-- (IBAction)cardModeChanged:(UISegmentedControl *)sender;
-- (IBAction)historySliderChanged:(UISlider *)sender;
-- (void)updateSliderRange;
+- (IBAction)deal;
+- (IBAction)changeGameMode;
+- (IBAction)updateHistory;
 
 @end
