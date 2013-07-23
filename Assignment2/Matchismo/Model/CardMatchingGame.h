@@ -16,11 +16,15 @@
               usingDeck:(Deck *)deck;
 
 - (void)flipCardAtIndex:(NSUInteger)index;
-
 - (Card *)cardAtIndex:(NSUInteger)index;
 
 @property (nonatomic, readonly) int score;
 @property (nonatomic, readwrite) int numberMatchingCards;
 @property (nonatomic, readonly) NSString *descriptionOfLastFlip;
+
+// settings
+@property (nonatomic) int matchBonus;
+@property (nonatomic) int mismatchPenalty;
+@property (nonatomic) int flipCost;
 
 @end

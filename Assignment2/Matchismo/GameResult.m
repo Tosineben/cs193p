@@ -20,6 +20,7 @@
 #define START_KEY @"StartDate"
 #define END_KEY @"EndDate"
 #define SCORE_KEY @"Score"
+#define GAME_TYPE_KEY @"GameType"
 #define ALL_RESULTS_KEY @"GameResult_All"
 
 + (NSArray *)allGameResults
@@ -48,6 +49,7 @@
             _start = resultDict[START_KEY];
             _end = resultDict[END_KEY];
             _score = [resultDict[SCORE_KEY] intValue];
+            _gameType = resultDict[GAME_TYPE_KEY];
             if (!_start || !_end)
             {
                 self = nil;
@@ -64,6 +66,7 @@
     
     if (!mutableGameResultsFromUserDefaults) mutableGameResultsFromUserDefaults = [[NSMutableDictionary alloc] init];
     
+    // start time is dictionary key
     mutableGameResultsFromUserDefaults[[self.start description]] = [self asPropertyList];
     [[NSUserDefaults standardUserDefaults] setObject:mutableGameResultsFromUserDefaults forKey:ALL_RESULTS_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -71,7 +74,7 @@
 
 - (id)asPropertyList
 {
-    return @{ START_KEY: self.start, END_KEY: self.end, SCORE_KEY: @(self.score) };
+    return @{ START_KEY: self.start, END_KEY: self.end, SCORE_KEY: @(self.score), GAME_TYPE_KEY: self.gameType };
 }
 
 // designated initializer
@@ -98,6 +101,21 @@
     _score = score;
     self.end = [NSDate date];
     [self synchronize];
+}
+
+- (NSComparisonResult)compareDate:(GameResult *)aGameResult
+{
+    return [self.end compare:aGameResult.end];
+}
+
+- (NSComparisonResult)compareScore:(GameResult *)aGameResult
+{
+    return [@(self.score) compare:@(aGameResult.score)];
+}
+
+- (NSComparisonResult)compareDuration:(GameResult *)aGameResult
+{
+    return [@(self.duration) compare:@(aGameResult.duration)];
 }
 
 @end

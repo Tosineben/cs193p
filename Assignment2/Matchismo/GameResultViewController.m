@@ -12,6 +12,7 @@
 @interface GameResultViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *display;
+@property (strong, nonatomic) NSArray *allGameResults;
 
 @end
 
@@ -57,6 +58,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.allGameResults = [GameResult allGameResults];
     [self updateUI];
 }
 - (void)viewDidAppear:(BOOL)animated
@@ -78,21 +80,45 @@
     [super didReceiveMemoryWarning];
 }
 
-// ensures the view and model are in sync
-- (void)updateUI
-{
-    NSString *displayText = @"";
-    for (GameResult *result in [GameResult allGameResults])
-    {
-        displayText = [displayText stringByAppendingFormat:@"Score: %d (%@, %0g)\n", result.score, result.end, round(result.duration)];
-    }
-    self.display.text = displayText;
-}
-
 // sets red badge icon on tab
 - (void)setBadgeValue:(NSString *)value
 {
     self.tabBarItem.badgeValue = value;
+}
+
+// ensures the view and model are in sync
+- (void)updateUI
+{
+    NSString *displayText = @"";
+    for (GameResult *result in self.allGameResults)
+    {
+        displayText = [displayText stringByAppendingFormat:@"%@: %d (%@, %gs)\n",
+                       result.gameType,
+                       result.score,
+                       [NSDateFormatter localizedStringFromDate:result.end
+                                                      dateStyle:NSDateFormatterShortStyle
+                                                      timeStyle:NSDateFormatterShortStyle],
+                       round(result.duration)];
+    }
+    self.display.text = displayText;
+}
+
+- (IBAction)sortByDate
+{
+    self.allGameResults = [self.allGameResults sortedArrayUsingSelector:@selector(compareDate:)];
+    [self updateUI];
+}
+
+- (IBAction)sortByScore
+{
+    self.allGameResults = [self.allGameResults sortedArrayUsingSelector:@selector(compareScore:)];
+    [self updateUI];
+}
+
+- (IBAction)sortByDuration
+{
+    self.allGameResults = [self.allGameResults sortedArrayUsingSelector:@selector(compareDuration:)];
+    [self updateUI];
 }
 
 @end
