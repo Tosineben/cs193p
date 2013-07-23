@@ -102,11 +102,13 @@
         [cardButton setAttributedTitle:title forState:UIControlStateNormal];
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
-        cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
+        
+        // completely remove unplayable cards
+        cardButton.alpha = card.isUnplayable ? 0.0 : 1.0;
         
         if (card.isFaceUp)
         {
-            [cardButton setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:1.0]];
+            [cardButton setBackgroundColor:[UIColor colorWithWhite:0.8 alpha:1.0]];
         }
         else
         {
