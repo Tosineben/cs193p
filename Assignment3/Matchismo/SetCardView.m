@@ -137,7 +137,7 @@
 }
 
 #define SQUIGGLE_WIDTH 0.12
-#define SQUIGGLE_HEIGHT 0.4
+#define SQUIGGLE_HEIGHT 0.3
 #define SQUIGGLE_FACTOR 0.8
 
 - (void)drawSquiggleAtPoint:(CGPoint)point
@@ -156,7 +156,7 @@
     // draw squiggle
     [path moveToPoint:CGPointMake(point.x - dx, point.y - dy)];
     [path addQuadCurveToPoint:CGPointMake(point.x + dx, point.y - dy)
-                 controlPoint:CGPointMake(point.x - dsqx, point.y + dy)];
+                 controlPoint:CGPointMake(point.x - dsqx, point.y - dy - dsqy)];
     [path addCurveToPoint:CGPointMake(point.x + dx, point.y + dy)
             controlPoint1:CGPointMake(point.x + dx + dsqx, point.y - dy + dsqy)
             controlPoint2:CGPointMake(point.x + dx - dsqx, point.y + dy - dsqy)];
@@ -179,11 +179,11 @@
     {
         [self shadePathSolid:path];
     }
-    else if ([self.symbol isEqualToString:@"striped"])
+    else if ([self.shading isEqualToString:@"striped"])
     {
         [self shadePathStriped:path];
     }
-    else if ([self.symbol isEqualToString:@"open"])
+    else if ([self.shading isEqualToString:@"open"])
     {
         [self shadePathOpen:path];
     }
