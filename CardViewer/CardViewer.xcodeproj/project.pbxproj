@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		969BA45417A0D75C008EFE68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969BA45317A0D75C008EFE68 /* UIKit.framework */; };
+		969BA45617A0D75C008EFE68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969BA45517A0D75C008EFE68 /* Foundation.framework */; };
+		969BA45817A0D75C008EFE68 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969BA45717A0D75C008EFE68 /* CoreGraphics.framework */; };
+		969BA45E17A0D75C008EFE68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 969BA45C17A0D75C008EFE68 /* InfoPlist.strings */; };
+		969BA46017A0D75D008EFE68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 969BA45F17A0D75D008EFE68 /* main.m */; };
+		969BA46417A0D75D008EFE68 /* CardChooserAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 969BA46317A0D75D008EFE68 /* CardChooserAppDelegate.m */; };
+		969BA46617A0D75D008EFE68 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA46517A0D75D008EFE68 /* Default.png */; };
+		969BA46817A0D75D008EFE68 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA46717A0D75D008EFE68 /* Default@2x.png */; };
+		969BA46A17A0D75D008EFE68 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA46917A0D75D008EFE68 /* Default-568h@2x.png */; };
+		969BA46D17A0D75D008EFE68 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969BA46B17A0D75D008EFE68 /* MainStoryboard.storyboard */; };
+		969BA47017A0D75D008EFE68 /* CardChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969BA46F17A0D75D008EFE68 /* CardChooserViewController.m */; };
+		969BA47817A0D871008EFE68 /* CardDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969BA47717A0D871008EFE68 /* CardDisplayViewController.m */; };
+		969BA49517A0D911008EFE68 /* cardback.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA47917A0D911008EFE68 /* cardback.png */; };
+		969BA49617A0D911008EFE68 /* J♠.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA47B17A0D911008EFE68 /* J♠.png */; };
+		969BA49717A0D911008EFE68 /* J♠@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA47C17A0D911008EFE68 /* J♠@2x.png */; };
+		969BA49817A0D911008EFE68 /* J♣.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA47D17A0D911008EFE68 /* J♣.png */; };
+		969BA49917A0D911008EFE68 /* J♣@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA47E17A0D911008EFE68 /* J♣@2x.png */; };
+		969BA49A17A0D911008EFE68 /* J♥.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA47F17A0D911008EFE68 /* J♥.png */; };
+		969BA49B17A0D911008EFE68 /* J♥@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48017A0D911008EFE68 /* J♥@2x.png */; };
+		969BA49C17A0D911008EFE68 /* J♦.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48117A0D911008EFE68 /* J♦.png */; };
+		969BA49D17A0D911008EFE68 /* J♦@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48217A0D911008EFE68 /* J♦@2x.png */; };
+		969BA49E17A0D911008EFE68 /* K♠.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48317A0D911008EFE68 /* K♠.png */; };
+		969BA49F17A0D911008EFE68 /* K♠@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48417A0D911008EFE68 /* K♠@2x.png */; };
+		969BA4A017A0D911008EFE68 /* K♣.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48517A0D911008EFE68 /* K♣.png */; };
+		969BA4A117A0D911008EFE68 /* K♣@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48617A0D911008EFE68 /* K♣@2x.png */; };
+		969BA4A217A0D911008EFE68 /* K♥.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48717A0D911008EFE68 /* K♥.png */; };
+		969BA4A317A0D911008EFE68 /* K♥@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48817A0D911008EFE68 /* K♥@2x.png */; };
+		969BA4A417A0D911008EFE68 /* K♦.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48917A0D911008EFE68 /* K♦.png */; };
+		969BA4A517A0D911008EFE68 /* K♦@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48A17A0D911008EFE68 /* K♦@2x.png */; };
+		969BA4A617A0D911008EFE68 /* Q♠.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48B17A0D911008EFE68 /* Q♠.png */; };
+		969BA4A717A0D911008EFE68 /* Q♠@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48C17A0D911008EFE68 /* Q♠@2x.png */; };
+		969BA4A817A0D911008EFE68 /* Q♣.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48D17A0D911008EFE68 /* Q♣.png */; };
+		969BA4A917A0D911008EFE68 /* Q♣@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48E17A0D911008EFE68 /* Q♣@2x.png */; };
+		969BA4AA17A0D911008EFE68 /* Q♥.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA48F17A0D911008EFE68 /* Q♥.png */; };
+		969BA4AB17A0D911008EFE68 /* Q♥@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA49017A0D911008EFE68 /* Q♥@2x.png */; };
+		969BA4AC17A0D911008EFE68 /* Q♦.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA49117A0D911008EFE68 /* Q♦.png */; };
+		969BA4AD17A0D911008EFE68 /* Q♦@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 969BA49217A0D911008EFE68 /* Q♦@2x.png */; };
+		969BA4AE17A0D911008EFE68 /* PlayingCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 969BA49417A0D911008EFE68 /* PlayingCardView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		969BA45017A0D75C008EFE68 /* CardViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		969BA45317A0D75C008EFE68 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		969BA45517A0D75C008EFE68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		969BA45717A0D75C008EFE68 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		969BA45B17A0D75C008EFE68 /* CardViewer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardViewer-Info.plist"; sourceTree = "<group>"; };
+		969BA45D17A0D75C008EFE68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		969BA45F17A0D75D008EFE68 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		969BA46117A0D75D008EFE68 /* CardViewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CardViewer-Prefix.pch"; sourceTree = "<group>"; };
+		969BA46217A0D75D008EFE68 /* CardChooserAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardChooserAppDelegate.h; sourceTree = "<group>"; };
+		969BA46317A0D75D008EFE68 /* CardChooserAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardChooserAppDelegate.m; sourceTree = "<group>"; };
+		969BA46517A0D75D008EFE68 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		969BA46717A0D75D008EFE68 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		969BA46917A0D75D008EFE68 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		969BA46C17A0D75D008EFE68 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		969BA46E17A0D75D008EFE68 /* CardChooserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardChooserViewController.h; sourceTree = "<group>"; };
+		969BA46F17A0D75D008EFE68 /* CardChooserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardChooserViewController.m; sourceTree = "<group>"; };
+		969BA47617A0D871008EFE68 /* CardDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDisplayViewController.h; sourceTree = "<group>"; };
+		969BA47717A0D871008EFE68 /* CardDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDisplayViewController.m; sourceTree = "<group>"; };
+		969BA47917A0D911008EFE68 /* cardback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardback.png; sourceTree = "<group>"; };
+		969BA47B17A0D911008EFE68 /* J♠.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "J♠.png"; sourceTree = "<group>"; };
+		969BA47C17A0D911008EFE68 /* J♠@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "J♠@2x.png"; sourceTree = "<group>"; };
+		969BA47D17A0D911008EFE68 /* J♣.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "J♣.png"; sourceTree = "<group>"; };
+		969BA47E17A0D911008EFE68 /* J♣@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "J♣@2x.png"; sourceTree = "<group>"; };
+		969BA47F17A0D911008EFE68 /* J♥.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "J♥.png"; sourceTree = "<group>"; };
+		969BA48017A0D911008EFE68 /* J♥@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "J♥@2x.png"; sourceTree = "<group>"; };
+		969BA48117A0D911008EFE68 /* J♦.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "J♦.png"; sourceTree = "<group>"; };
+		969BA48217A0D911008EFE68 /* J♦@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "J♦@2x.png"; sourceTree = "<group>"; };
+		969BA48317A0D911008EFE68 /* K♠.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "K♠.png"; sourceTree = "<group>"; };
+		969BA48417A0D911008EFE68 /* K♠@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "K♠@2x.png"; sourceTree = "<group>"; };
+		969BA48517A0D911008EFE68 /* K♣.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "K♣.png"; sourceTree = "<group>"; };
+		969BA48617A0D911008EFE68 /* K♣@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "K♣@2x.png"; sourceTree = "<group>"; };
+		969BA48717A0D911008EFE68 /* K♥.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "K♥.png"; sourceTree = "<group>"; };
+		969BA48817A0D911008EFE68 /* K♥@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "K♥@2x.png"; sourceTree = "<group>"; };
+		969BA48917A0D911008EFE68 /* K♦.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "K♦.png"; sourceTree = "<group>"; };
+		969BA48A17A0D911008EFE68 /* K♦@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "K♦@2x.png"; sourceTree = "<group>"; };
+		969BA48B17A0D911008EFE68 /* Q♠.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Q♠.png"; sourceTree = "<group>"; };
+		969BA48C17A0D911008EFE68 /* Q♠@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Q♠@2x.png"; sourceTree = "<group>"; };
+		969BA48D17A0D911008EFE68 /* Q♣.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Q♣.png"; sourceTree = "<group>"; };
+		969BA48E17A0D911008EFE68 /* Q♣@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Q♣@2x.png"; sourceTree = "<group>"; };
+		969BA48F17A0D911008EFE68 /* Q♥.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Q♥.png"; sourceTree = "<group>"; };
+		969BA49017A0D911008EFE68 /* Q♥@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Q♥@2x.png"; sourceTree = "<group>"; };
+		969BA49117A0D911008EFE68 /* Q♦.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Q♦.png"; sourceTree = "<group>"; };
+		969BA49217A0D911008EFE68 /* Q♦@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Q♦@2x.png"; sourceTree = "<group>"; };
+		969BA49317A0D911008EFE68 /* PlayingCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardView.h; sourceTree = "<group>"; };
+		969BA49417A0D911008EFE68 /* PlayingCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		969BA44D17A0D75C008EFE68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969BA45417A0D75C008EFE68 /* UIKit.framework in Frameworks */,
+				969BA45617A0D75C008EFE68 /* Foundation.framework in Frameworks */,
+				969BA45817A0D75C008EFE68 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		969BA44717A0D75C008EFE68 = {
+			isa = PBXGroup;
+			children = (
+				969BA45917A0D75C008EFE68 /* CardViewer */,
+				969BA45217A0D75C008EFE68 /* Frameworks */,
+				969BA45117A0D75C008EFE68 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		969BA45117A0D75C008EFE68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				969BA45017A0D75C008EFE68 /* CardViewer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		969BA45217A0D75C008EFE68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				969BA45317A0D75C008EFE68 /* UIKit.framework */,
+				969BA45517A0D75C008EFE68 /* Foundation.framework */,
+				969BA45717A0D75C008EFE68 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		969BA45917A0D75C008EFE68 /* CardViewer */ = {
+			isa = PBXGroup;
+			children = (
+				969BA46B17A0D75D008EFE68 /* MainStoryboard.storyboard */,
+				969BA47617A0D871008EFE68 /* CardDisplayViewController.h */,
+				969BA47717A0D871008EFE68 /* CardDisplayViewController.m */,
+				969BA46E17A0D75D008EFE68 /* CardChooserViewController.h */,
+				969BA46F17A0D75D008EFE68 /* CardChooserViewController.m */,
+				969BA47917A0D911008EFE68 /* cardback.png */,
+				969BA47A17A0D911008EFE68 /* PlayingCardFaces */,
+				969BA49317A0D911008EFE68 /* PlayingCardView.h */,
+				969BA49417A0D911008EFE68 /* PlayingCardView.m */,
+				969BA45A17A0D75C008EFE68 /* Supporting Files */,
+			);
+			path = CardViewer;
+			sourceTree = "<group>";
+		};
+		969BA45A17A0D75C008EFE68 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				969BA46217A0D75D008EFE68 /* CardChooserAppDelegate.h */,
+				969BA46317A0D75D008EFE68 /* CardChooserAppDelegate.m */,
+				969BA45B17A0D75C008EFE68 /* CardViewer-Info.plist */,
+				969BA45C17A0D75C008EFE68 /* InfoPlist.strings */,
+				969BA45F17A0D75D008EFE68 /* main.m */,
+				969BA46117A0D75D008EFE68 /* CardViewer-Prefix.pch */,
+				969BA46517A0D75D008EFE68 /* Default.png */,
+				969BA46717A0D75D008EFE68 /* Default@2x.png */,
+				969BA46917A0D75D008EFE68 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		969BA47A17A0D911008EFE68 /* PlayingCardFaces */ = {
+			isa = PBXGroup;
+			children = (
+				969BA47B17A0D911008EFE68 /* J♠.png */,
+				969BA47C17A0D911008EFE68 /* J♠@2x.png */,
+				969BA47D17A0D911008EFE68 /* J♣.png */,
+				969BA47E17A0D911008EFE68 /* J♣@2x.png */,
+				969BA47F17A0D911008EFE68 /* J♥.png */,
+				969BA48017A0D911008EFE68 /* J♥@2x.png */,
+				969BA48117A0D911008EFE68 /* J♦.png */,
+				969BA48217A0D911008EFE68 /* J♦@2x.png */,
+				969BA48317A0D911008EFE68 /* K♠.png */,
+				969BA48417A0D911008EFE68 /* K♠@2x.png */,
+				969BA48517A0D911008EFE68 /* K♣.png */,
+				969BA48617A0D911008EFE68 /* K♣@2x.png */,
+				969BA48717A0D911008EFE68 /* K♥.png */,
+				969BA48817A0D911008EFE68 /* K♥@2x.png */,
+				969BA48917A0D911008EFE68 /* K♦.png */,
+				969BA48A17A0D911008EFE68 /* K♦@2x.png */,
+				969BA48B17A0D911008EFE68 /* Q♠.png */,
+				969BA48C17A0D911008EFE68 /* Q♠@2x.png */,
+				969BA48D17A0D911008EFE68 /* Q♣.png */,
+				969BA48E17A0D911008EFE68 /* Q♣@2x.png */,
+				969BA48F17A0D911008EFE68 /* Q♥.png */,
+				969BA49017A0D911008EFE68 /* Q♥@2x.png */,
+				969BA49117A0D911008EFE68 /* Q♦.png */,
+				969BA49217A0D911008EFE68 /* Q♦@2x.png */,
+			);
+			path = PlayingCardFaces;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		969BA44F17A0D75C008EFE68 /* CardViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 969BA47317A0D75D008EFE68 /* Build configuration list for PBXNativeTarget "CardViewer" */;
+			buildPhases = (
+				969BA44C17A0D75C008EFE68 /* Sources */,
+				969BA44D17A0D75C008EFE68 /* Frameworks */,
+				969BA44E17A0D75C008EFE68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardViewer;
+			productName = CardViewer;
+			productReference = 969BA45017A0D75C008EFE68 /* CardViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		969BA44817A0D75C008EFE68 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CardChooser;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = CS193p;
+			};
+			buildConfigurationList = 969BA44B17A0D75C008EFE68 /* Build configuration list for PBXProject "CardViewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 969BA44717A0D75C008EFE68;
+			productRefGroup = 969BA45117A0D75C008EFE68 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				969BA44F17A0D75C008EFE68 /* CardViewer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		969BA44E17A0D75C008EFE68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969BA45E17A0D75C008EFE68 /* InfoPlist.strings in Resources */,
+				969BA46617A0D75D008EFE68 /* Default.png in Resources */,
+				969BA46817A0D75D008EFE68 /* Default@2x.png in Resources */,
+				969BA46A17A0D75D008EFE68 /* Default-568h@2x.png in Resources */,
+				969BA46D17A0D75D008EFE68 /* MainStoryboard.storyboard in Resources */,
+				969BA49517A0D911008EFE68 /* cardback.png in Resources */,
+				969BA49617A0D911008EFE68 /* J♠.png in Resources */,
+				969BA49717A0D911008EFE68 /* J♠@2x.png in Resources */,
+				969BA49817A0D911008EFE68 /* J♣.png in Resources */,
+				969BA49917A0D911008EFE68 /* J♣@2x.png in Resources */,
+				969BA49A17A0D911008EFE68 /* J♥.png in Resources */,
+				969BA49B17A0D911008EFE68 /* J♥@2x.png in Resources */,
+				969BA49C17A0D911008EFE68 /* J♦.png in Resources */,
+				969BA49D17A0D911008EFE68 /* J♦@2x.png in Resources */,
+				969BA49E17A0D911008EFE68 /* K♠.png in Resources */,
+				969BA49F17A0D911008EFE68 /* K♠@2x.png in Resources */,
+				969BA4A017A0D911008EFE68 /* K♣.png in Resources */,
+				969BA4A117A0D911008EFE68 /* K♣@2x.png in Resources */,
+				969BA4A217A0D911008EFE68 /* K♥.png in Resources */,
+				969BA4A317A0D911008EFE68 /* K♥@2x.png in Resources */,
+				969BA4A417A0D911008EFE68 /* K♦.png in Resources */,
+				969BA4A517A0D911008EFE68 /* K♦@2x.png in Resources */,
+				969BA4A617A0D911008EFE68 /* Q♠.png in Resources */,
+				969BA4A717A0D911008EFE68 /* Q♠@2x.png in Resources */,
+				969BA4A817A0D911008EFE68 /* Q♣.png in Resources */,
+				969BA4A917A0D911008EFE68 /* Q♣@2x.png in Resources */,
+				969BA4AA17A0D911008EFE68 /* Q♥.png in Resources */,
+				969BA4AB17A0D911008EFE68 /* Q♥@2x.png in Resources */,
+				969BA4AC17A0D911008EFE68 /* Q♦.png in Resources */,
+				969BA4AD17A0D911008EFE68 /* Q♦@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		969BA44C17A0D75C008EFE68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969BA46017A0D75D008EFE68 /* main.m in Sources */,
+				969BA46417A0D75D008EFE68 /* CardChooserAppDelegate.m in Sources */,
+				969BA47017A0D75D008EFE68 /* CardChooserViewController.m in Sources */,
+				969BA47817A0D871008EFE68 /* CardDisplayViewController.m in Sources */,
+				969BA4AE17A0D911008EFE68 /* PlayingCardView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		969BA45C17A0D75C008EFE68 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				969BA45D17A0D75C008EFE68 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		969BA46B17A0D75D008EFE68 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				969BA46C17A0D75D008EFE68 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		969BA47117A0D75D008EFE68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		969BA47217A0D75D008EFE68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		969BA47417A0D75D008EFE68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CardViewer/CardViewer-Prefix.pch";
+				INFOPLIST_FILE = "CardViewer/CardViewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		969BA47517A0D75D008EFE68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CardViewer/CardViewer-Prefix.pch";
+				INFOPLIST_FILE = "CardViewer/CardViewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		969BA44B17A0D75C008EFE68 /* Build configuration list for PBXProject "CardViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969BA47117A0D75D008EFE68 /* Debug */,
+				969BA47217A0D75D008EFE68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		969BA47317A0D75D008EFE68 /* Build configuration list for PBXNativeTarget "CardViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969BA47417A0D75D008EFE68 /* Debug */,
+				969BA47517A0D75D008EFE68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 969BA44817A0D75C008EFE68 /* Project object */;
+}
