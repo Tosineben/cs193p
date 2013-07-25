@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RmC-CG-4tl">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Latest Flickr PhotosTVC - Latest Photos-->
+        <scene sceneID="saI-Yn-2yv">
+            <objects>
+                <tableViewController id="b5G-JL-UFv" customClass="LatestFlickrPhotosTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ugC-HA-b5v">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FlickrPhoto" textLabel="bcL-wN-1aI" detailTextLabel="pJw-a6-tQT" style="IBUITableViewCellStyleSubtitle" id="erS-mS-G67">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcL-wN-1aI">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJw-a6-tQT">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="NJK-6U-jhq" kind="push" identifier="ShowImage" id="hRv-VM-T75"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="b5G-JL-UFv" id="9BR-UL-pNU"/>
+                            <outlet property="delegate" destination="b5G-JL-UFv" id="qGS-iD-Scp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Latest Photos" id="Js9-5n-OAc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLX-Ey-jIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="57"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="l8F-x3-8YG">
+            <objects>
+                <viewController id="NJK-6U-jhq" customClass="ImageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MXx-gW-kNV">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxj-jj-OHE"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pxj-jj-OHE" firstAttribute="top" secondItem="MXx-gW-kNV" secondAttribute="top" type="default" id="DZ0-Ft-cdl"/>
+                            <constraint firstItem="pxj-jj-OHE" firstAttribute="leading" secondItem="MXx-gW-kNV" secondAttribute="leading" type="default" id="Zzv-S7-bo5"/>
+                            <constraint firstItem="pxj-jj-OHE" firstAttribute="trailing" secondItem="MXx-gW-kNV" secondAttribute="trailing" type="default" id="gga-4D-GjH"/>
+                            <constraint firstItem="pxj-jj-OHE" firstAttribute="bottom" secondItem="MXx-gW-kNV" secondAttribute="bottom" type="default" id="rhc-I8-WP4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BuB-9p-bp7"/>
+                    <connections>
+                        <outlet property="scrollView" destination="pxj-jj-OHE" id="Wgd-ad-dlF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ken-am-QOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="623" y="57"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="70O-Kx-Gma">
+            <objects>
+                <navigationController id="RmC-CG-4tl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9b2-FW-0p7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b5G-JL-UFv" kind="relationship" relationship="rootViewController" id="AuU-mq-DzQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogR-9a-BrD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-313" y="57"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="FlickrPhotoTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlickrPhotoTVC.h"/>
+        </class>
+        <class className="ImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="LatestFlickrPhotosTVC" superclassName="FlickrPhotoTVC">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LatestFlickrPhotosTVC.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
