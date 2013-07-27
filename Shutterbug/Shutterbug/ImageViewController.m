@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *titleBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UIPopoverController *urlPopover;
@@ -76,20 +77,42 @@
     self.scrollView.contentSize = CGSizeZero;
     self.imageView.image = nil;
     
-    NSData *imageData = [[NSData alloc] initWithContentsOfURL:self.imageURL];
-    UIImage *image = [[UIImage alloc] initWithData:imageData];
+    // download image on another thread
     
-    // if we fail to load the image for some reason, do nothing
-    if (!image)
-    {
-        return;
-    }
+    [self.spinner startAnimating];
     
-    self.scrollView.contentSize = image.size;
-    self.imageView.image = image;
-    
-    // put imageView in top left of scrollView
-    self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    NSURL *imageURL = self.imageURL; // save this before dispatching
+    dispatch_queue_t imageFetchQueue = dispatch_queue_create("image fetcher", NULL);
+    dispatch_async(imageFetchQueue, ^{
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        [NSThread sleepForTimeInterval:2.0]; // pretend like image takes a while
+        NSData *imageData = [[NSData alloc] initWithContentsOfURL:self.imageURL];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+        UIImage *image = [[UIImage alloc] initWithData:imageData];
+        
+        // if we've switched images, do nothing
+        if (self.imageURL != imageURL)
+        {
+            return;
+        }
+        
+        // tell UI thread to update
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.spinner stopAnimating];
+            
+            if (image)
+            {
+                self.scrollView.contentSize = image.size;
+                self.imageView.image = image;
+                
+                // put imageView in top left of scrollView
+                self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);                
+            }
+        });
+    });
 }
 
 - (UIImageView *)imageView

@@ -44,6 +44,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Latest Photos" id="Js9-5n-OAc"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="faJ-JQ-Kw7">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLX-Ey-jIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -57,19 +60,23 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6QW-R3-iG1"/>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxj-jj-OHE"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pxj-jj-OHE" firstAttribute="top" secondItem="MXx-gW-kNV" secondAttribute="top" type="default" id="DZ0-Ft-cdl"/>
-                            <constraint firstItem="pxj-jj-OHE" firstAttribute="leading" secondItem="MXx-gW-kNV" secondAttribute="leading" type="default" id="Zzv-S7-bo5"/>
-                            <constraint firstItem="pxj-jj-OHE" firstAttribute="trailing" secondItem="MXx-gW-kNV" secondAttribute="trailing" type="default" id="gga-4D-GjH"/>
-                            <constraint firstItem="pxj-jj-OHE" firstAttribute="bottom" secondItem="MXx-gW-kNV" secondAttribute="bottom" type="default" id="rhc-I8-WP4"/>
+                            <constraint firstItem="6QW-R3-iG1" firstAttribute="centerY" secondItem="MXx-gW-kNV" secondAttribute="centerY" type="default" id="BTB-cp-oai"/>
+                            <constraint firstItem="pxj-jj-OHE" firstAttribute="trailing" secondItem="MXx-gW-kNV" secondAttribute="trailing" type="default" id="ECd-kz-wcx"/>
+                            <constraint firstItem="pxj-jj-OHE" firstAttribute="centerX" secondItem="6QW-R3-iG1" secondAttribute="centerX" type="default" id="Fsh-Od-BNq"/>
+                            <constraint firstItem="pxj-jj-OHE" firstAttribute="top" secondItem="MXx-gW-kNV" secondAttribute="top" type="default" id="NQG-h4-R3J"/>
+                            <constraint firstItem="pxj-jj-OHE" firstAttribute="leading" secondItem="MXx-gW-kNV" secondAttribute="leading" type="default" id="fKV-Yq-mvD"/>
+                            <constraint firstItem="pxj-jj-OHE" firstAttribute="bottom" secondItem="MXx-gW-kNV" secondAttribute="bottom" type="default" id="pcn-m1-XVs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BuB-9p-bp7"/>
                     <connections>
                         <outlet property="scrollView" destination="pxj-jj-OHE" id="Wgd-ad-dlF"/>
+                        <outlet property="spinner" destination="6QW-R3-iG1" id="yay-XX-2sO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ken-am-QOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -103,6 +110,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="titleBarButtonItem" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
         <class className="LatestFlickrPhotosTVC" superclassName="FlickrPhotoTVC">
@@ -110,6 +119,9 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIRefreshControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
