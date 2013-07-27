@@ -7,16 +7,56 @@
 //
 
 #import "ImageViewController.h"
+#import "AttributedStringViewController.h"
 
 @interface ImageViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *titleBarButtonItem;
 
 @property (strong, nonatomic) UIImageView *imageView;
+@property (strong, nonatomic) UIPopoverController *urlPopover;
 
 @end
 
 @implementation ImageViewController
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier
+                                  sender:(id)sender
+{
+    // don't perform ShowURL if there is no imageURL or we're already showing one
+    if ([identifier isEqualToString:@"ShowURL"])
+    {
+        return self.imageURL && !self.urlPopover.popoverVisible;
+    }
+    else
+    {
+        return [super shouldPerformSegueWithIdentifier:identifier sender:sender];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShowURL"] &&
+        [segue.destinationViewController isKindOfClass:[AttributedStringViewController class]])
+    {
+        AttributedStringViewController *asc = segue.destinationViewController;
+        asc.text = [[NSAttributedString alloc] initWithString:[self.imageURL description]];
+        
+        // if popover segue, save popover so that we don't show multiple
+        if ([segue isKindOfClass:[UIStoryboardPopoverSegue class]])
+        {
+            self.urlPopover = ((UIStoryboardPopoverSegue *)segue).popoverController;
+        }
+    }
+}
+
+- (void)setTitle:(NSString *)title
+{
+    super.title = title;
+    self.titleBarButtonItem.title = title;
+}
 
 - (void)setImageURL:(NSURL *)imageURL
 {
@@ -78,6 +118,9 @@
     
     // need to call reset image in case someone set imageURL before loading
     [self resetImage];
+    
+    // need to set title in case someone set title before loading
+    self.titleBarButtonItem.title = self.title;
 }
 
 

@@ -9,11 +9,27 @@
 #import "FlickrPhotoTVC.h"
 #import "FlickrFetcher.h"
 
-@interface FlickrPhotoTVC ()
+@interface FlickrPhotoTVC () <UISplitViewControllerDelegate>
 
 @end
 
 @implementation FlickrPhotoTVC
+
+#pragma mark setup
+
+- (void) awakeFromNib
+{
+    self.splitViewController.delegate = self;
+}
+
+#pragma mark UISplitViewControllerDelegate
+
+- (BOOL)splitViewController:(UISplitViewController *)svc
+   shouldHideViewController:(UIViewController *)vc
+              inOrientation:(UIInterfaceOrientation)orientation
+{
+    return NO;
+}
 
 - (void)setPhotos:(NSArray *)photos
 {
@@ -40,7 +56,7 @@
     }
 }
 
-#pragma mark - Table view data source
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
