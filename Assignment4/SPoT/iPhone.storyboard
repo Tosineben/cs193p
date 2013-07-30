@@ -44,6 +44,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="SPoT" id="oP6-ev-nso"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="VzA-ve-5bP">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbJ-ZO-3e7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,9 +92,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Js9-5n-OAc"/>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="faJ-JQ-Kw7">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLX-Ey-jIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,9 +208,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recents" id="IOt-Qs-P5v"/>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="pxI-0o-FxN">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTQ-rB-oNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

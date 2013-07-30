@@ -122,14 +122,14 @@
 				96819FFE17A7394200AE2829 /* ImageViewController.m */,
 				9681A00217A7394200AE2829 /* RecentFlickrPhotosTVC.h */,
 				9681A00317A7394200AE2829 /* RecentFlickrPhotosTVC.m */,
-				9681A01117A73B6000AE2829 /* RecentFlickrPhotos.h */,
-				9681A01217A73B6000AE2829 /* RecentFlickrPhotos.m */,
-				9681A01417A73B7200AE2829 /* NetworkActivityIndicator.h */,
-				9681A01517A73B7200AE2829 /* NetworkActivityIndicator.m */,
 				96819FF517A7394200AE2829 /* FlickrFetcher */,
 				96819FD417A738E800AE2829 /* Supporting Files */,
 				9681A00E17A73B1F00AE2829 /* FlickrCache.h */,
 				9681A00F17A73B1F00AE2829 /* FlickrCache.m */,
+				9681A01417A73B7200AE2829 /* NetworkActivityIndicator.h */,
+				9681A01517A73B7200AE2829 /* NetworkActivityIndicator.m */,
+				9681A01117A73B6000AE2829 /* RecentFlickrPhotos.h */,
+				9681A01217A73B6000AE2829 /* RecentFlickrPhotos.m */,
 			);
 			path = SPoT;
 			sourceTree = "<group>";

@@ -8,6 +8,7 @@
 
 #import "FlickrPhotoTVC.h"
 #import "FlickrFetcher.h"
+#import "RecentFlickrPhotos.h"
 
 @interface FlickrPhotoTVC () <UISplitViewControllerDelegate>
 
@@ -40,8 +41,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if (![sender isKindOfClass:[UITableViewCell class]] ||
-        ![segue.identifier isEqualToString:@"ShowImage"] ||
-        ![segue.destinationViewController respondsToSelector:@selector(setImageURL:)])
+        ![segue.identifier isEqualToString:@"ShowImage"])
     {
         return;
     }
@@ -50,9 +50,21 @@
     
     if (indexPath)
     {
-        NSURL *url = [FlickrFetcher urlForPhoto:self.photos[indexPath.row] format:FlickrPhotoFormatLarge];
-        [segue.destinationViewController performSelector:@selector(setImageURL:) withObject:url];
-        [segue.destinationViewController setTitle:[self titleForRow:indexPath.row]];
+        [self sendDataforIndexPath:indexPath toViewController:segue.destinationViewController];
+    }
+}
+
+- (void)sendDataforIndexPath:(NSIndexPath *)indexPath
+            toViewController:(UIViewController *)vc
+{
+    if ([vc respondsToSelector:@selector(setImageURL:)])
+    {
+        NSDictionary *photo = self.photos[indexPath.row];
+        [RecentFlickrPhotos addPhoto:photo];
+        
+        NSURL *url = [FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatLarge];
+        [vc performSelector:@selector(setImageURL:) withObject:url];
+        [vc setTitle:[self titleForRow:indexPath.row]];
     }
 }
 
@@ -71,8 +83,7 @@
 
 - (NSString *)subtitleForRow:(NSUInteger)row
 {
-    // might get back NSNull, so use description
-    return [self.photos[row][FLICKR_PHOTO_OWNER] description];
+    return [[self.photos[row] valueForKeyPath:FLICKR_PHOTO_DESCRIPTION] description];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -86,6 +97,14 @@
     cell.detailTextLabel.text = [self subtitleForRow:indexPath.row];
     
     return cell;
+}
+
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self sendDataforIndexPath:indexPath
+              toViewController:[self.splitViewController.viewControllers lastObject]];
 }
 
 @end

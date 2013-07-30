@@ -8,15 +8,18 @@
 
 #import "ImageViewController.h"
 #import "AttributedStringViewController.h"
+#import "NetworkActivityIndicator.h"
 
-@interface ImageViewController () <UIScrollViewDelegate>
+@interface ImageViewController () <UIScrollViewDelegate, UISplitViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *titleBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UIPopoverController *urlPopover;
+@property (nonatomic, strong) UIBarButtonItem *splitViewBarButtonItem;
 
 @end
 
@@ -73,7 +76,6 @@
         return;
     }
     
-    self.scrollView.zoomScale = 1.0; // make sure we're at normal zoom
     self.scrollView.contentSize = CGSizeZero;
     self.imageView.image = nil;
     
@@ -85,10 +87,9 @@
     dispatch_queue_t imageFetchQueue = dispatch_queue_create("image fetcher", NULL);
     dispatch_async(imageFetchQueue, ^{
         
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        [NSThread sleepForTimeInterval:2.0]; // pretend like image takes a while
+        [NetworkActivityIndicator start];
         NSData *imageData = [[NSData alloc] initWithContentsOfURL:self.imageURL];
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        [NetworkActivityIndicator stop];
         
         UIImage *image = [[UIImage alloc] initWithData:imageData];
         
@@ -105,26 +106,37 @@
             
             if (image)
             {
+                self.scrollView.zoomScale = 1.0;
                 self.scrollView.contentSize = image.size;
                 self.imageView.image = image;
                 
                 // put imageView in top left of scrollView
-                self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);                
+                self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+                [self setZoomScaleToFillScreen]; 
             }
         });
     });
+}
+
+- (void)setZoomScaleToFillScreen
+{
+    double wScale = self.scrollView.bounds.size.width / self.imageView.image.size.width;
+    double hScale = self.scrollView.bounds.size.height / self.imageView.image.size.height;
+    
+    if (wScale > hScale)
+    {
+        self.scrollView.zoomScale = wScale;
+    }
+    else
+    {
+        self.scrollView.zoomScale = hScale;
+    }
 }
 
 - (UIImageView *)imageView
 {
     if (!_imageView) _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     return _imageView;
-}
-
-// allow zooming
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
-    return self.imageView;
 }
 
 - (void)viewDidLoad
@@ -144,7 +156,67 @@
     
     // need to set title in case someone set title before loading
     self.titleBarButtonItem.title = self.title;
+    
+    self.splitViewController.delegate = self;
+    [self handleSplitViewBarButtonItem:self.splitViewBarButtonItem];
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self setZoomScaleToFillScreen];
+}
+
+#pragma mark - Scroll view
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.imageView;
+}
+
+#pragma mark - Split view
+
+- (void)handleSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
+{
+    NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
+    if (_splitViewBarButtonItem)
+    {
+        [toolbarItems removeObject:_splitViewBarButtonItem];
+    }
+    if (splitViewBarButtonItem)
+    {
+        [toolbarItems insertObject:splitViewBarButtonItem atIndex:0];
+    }
+    self.toolbar.items = toolbarItems;
+    _splitViewBarButtonItem = splitViewBarButtonItem;
+}
+
+- (void)setSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
+{
+    if (_splitViewBarButtonItem != splitViewBarButtonItem)
+    {
+        [self handleSplitViewBarButtonItem:splitViewBarButtonItem];
+    }
+}
+
+- (void)splitViewController:(UISplitViewController *)svc
+     willHideViewController:(UIViewController *)aViewController
+          withBarButtonItem:(UIBarButtonItem *)barButtonItem
+       forPopoverController:(UIPopoverController *)pc
+{
+    UIBarButtonItem *button = [[UIBarButtonItem alloc]
+                               initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+                               target:barButtonItem.target
+                               action:barButtonItem.action];
+    barButtonItem = button;
+    self.splitViewBarButtonItem = barButtonItem;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc
+     willShowViewController:(UIViewController *)aViewController
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    self.splitViewBarButtonItem = nil;
+}
 
 @end

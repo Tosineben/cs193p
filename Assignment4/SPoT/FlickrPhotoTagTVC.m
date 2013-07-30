@@ -30,9 +30,9 @@
 {
     [super viewDidLoad];
     [self loadPhotosFromFlickr];
-//    [self.refreshControl addTarget:self
-  //                          action:@selector(loadLatestPhotosFromFlickr)
-    //              forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self
+                            action:@selector(loadPhotosFromFlickr)
+                  forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)loadPhotosFromFlickr
@@ -44,7 +44,7 @@
         NSArray *photos = [FlickrFetcher stanfordPhotos];
         [NetworkActivityIndicator stop];
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.photos = photos;
+            self.photos = [photos sortedArrayUsingDescriptors:@[[[NSSortDescriptor alloc] initWithKey:FLICKR_PHOTO_TITLE ascending:YES]]];
             [self.refreshControl endRefreshing];
         });
     });
