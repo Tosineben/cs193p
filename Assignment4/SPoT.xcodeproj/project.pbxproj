@@ -24,7 +24,6 @@
 		9681A00917A7394200AE2829 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96819FFF17A7394200AE2829 /* iPad.storyboard */; };
 		9681A00B17A7394200AE2829 /* RecentFlickrPhotosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9681A00317A7394200AE2829 /* RecentFlickrPhotosTVC.m */; };
 		9681A00D17A739FE00AE2829 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9681A00C17A739FE00AE2829 /* iPhone.storyboard */; };
-		9681A01017A73B1F00AE2829 /* FlickrCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9681A00F17A73B1F00AE2829 /* FlickrCache.m */; };
 		9681A01317A73B6000AE2829 /* RecentFlickrPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 9681A01217A73B6000AE2829 /* RecentFlickrPhotos.m */; };
 		9681A01617A73B7200AE2829 /* NetworkActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9681A01517A73B7200AE2829 /* NetworkActivityIndicator.m */; };
 /* End PBXBuildFile section */
@@ -58,8 +57,6 @@
 		9681A00217A7394200AE2829 /* RecentFlickrPhotosTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentFlickrPhotosTVC.h; sourceTree = "<group>"; };
 		9681A00317A7394200AE2829 /* RecentFlickrPhotosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentFlickrPhotosTVC.m; sourceTree = "<group>"; };
 		9681A00C17A739FE00AE2829 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
-		9681A00E17A73B1F00AE2829 /* FlickrCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrCache.h; sourceTree = "<group>"; };
-		9681A00F17A73B1F00AE2829 /* FlickrCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrCache.m; sourceTree = "<group>"; };
 		9681A01117A73B6000AE2829 /* RecentFlickrPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentFlickrPhotos.h; sourceTree = "<group>"; };
 		9681A01217A73B6000AE2829 /* RecentFlickrPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentFlickrPhotos.m; sourceTree = "<group>"; };
 		9681A01417A73B7200AE2829 /* NetworkActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkActivityIndicator.h; sourceTree = "<group>"; };
@@ -124,8 +121,6 @@
 				9681A00317A7394200AE2829 /* RecentFlickrPhotosTVC.m */,
 				96819FF517A7394200AE2829 /* FlickrFetcher */,
 				96819FD417A738E800AE2829 /* Supporting Files */,
-				9681A00E17A73B1F00AE2829 /* FlickrCache.h */,
-				9681A00F17A73B1F00AE2829 /* FlickrCache.m */,
 				9681A01417A73B7200AE2829 /* NetworkActivityIndicator.h */,
 				9681A01517A73B7200AE2829 /* NetworkActivityIndicator.m */,
 				9681A01117A73B6000AE2829 /* RecentFlickrPhotos.h */,
@@ -235,7 +230,6 @@
 				9681A00717A7394200AE2829 /* FlickrPhotoTVC.m in Sources */,
 				9681A00817A7394200AE2829 /* ImageViewController.m in Sources */,
 				9681A00B17A7394200AE2829 /* RecentFlickrPhotosTVC.m in Sources */,
-				9681A01017A73B1F00AE2829 /* FlickrCache.m in Sources */,
 				9681A01317A73B6000AE2829 /* RecentFlickrPhotos.m in Sources */,
 				9681A01617A73B7200AE2829 /* NetworkActivityIndicator.m in Sources */,
 			);

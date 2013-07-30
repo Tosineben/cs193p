@@ -50,7 +50,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="a9l-2K-Fsp" kind="push" id="Fsg-8y-e7g"/>
+                                    <segue destination="a9l-2K-Fsp" kind="push" identifier="ShowTagPhotos" id="Fsg-8y-e7g"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -99,7 +99,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="XnZ-hg-mA1" kind="push" id="ZQj-W0-LC9"/>
+                                    <segue destination="XnZ-hg-mA1" kind="replace" splitViewControllerTargetIndex="1" id="ZQj-W0-LC9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -119,7 +119,7 @@
             <objects>
                 <viewController id="XnZ-hg-mA1" customClass="ImageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2vY-9Z-sbe">
-                        <rect key="frame" x="0.0" y="64" width="320" height="739"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uAU-Ny-2pG"/>
@@ -142,27 +142,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KTV-Bk-PJz" firstAttribute="top" secondItem="2vY-9Z-sbe" secondAttribute="top" constant="-3" id="DgY-oI-AVu"/>
-                            <constraint firstItem="OgY-Xb-ByL" firstAttribute="top" secondItem="KTV-Bk-PJz" secondAttribute="bottom" type="default" id="E1V-cl-Szg"/>
                             <constraint firstItem="KTV-Bk-PJz" firstAttribute="leading" secondItem="2vY-9Z-sbe" secondAttribute="leading" type="default" id="JUP-TI-kiM"/>
                             <constraint firstItem="uAU-Ny-2pG" firstAttribute="centerX" secondItem="KTV-Bk-PJz" secondAttribute="centerX" type="default" id="Jpc-bV-Rrh"/>
-                            <constraint firstItem="uAU-Ny-2pG" firstAttribute="top" secondItem="2vY-9Z-sbe" secondAttribute="top" constant="490" id="Ygt-9r-Ywm"/>
-                            <constraint firstItem="OgY-Xb-ByL" firstAttribute="trailing" secondItem="2vY-9Z-sbe" secondAttribute="trailing" type="default" id="a7X-eo-WzT"/>
-                            <constraint firstAttribute="bottom" secondItem="OgY-Xb-ByL" secondAttribute="bottom" constant="3" id="eIG-Ir-OTZ"/>
+                            <constraint firstItem="OgY-Xb-ByL" firstAttribute="leading" secondItem="2vY-9Z-sbe" secondAttribute="leading" type="default" id="Mw3-0n-jo4"/>
+                            <constraint firstItem="OgY-Xb-ByL" firstAttribute="top" secondItem="KTV-Bk-PJz" secondAttribute="bottom" type="default" id="TMs-68-S6l"/>
                             <constraint firstItem="KTV-Bk-PJz" firstAttribute="trailing" secondItem="2vY-9Z-sbe" secondAttribute="trailing" type="default" id="fwt-CG-WUK"/>
-                            <constraint firstItem="OgY-Xb-ByL" firstAttribute="leading" secondItem="2vY-9Z-sbe" secondAttribute="leading" type="default" id="qSD-MC-8on"/>
+                            <constraint firstItem="OgY-Xb-ByL" firstAttribute="bottom" secondItem="2vY-9Z-sbe" secondAttribute="bottom" type="default" id="h99-JE-gaF"/>
+                            <constraint firstItem="OgY-Xb-ByL" firstAttribute="trailing" secondItem="2vY-9Z-sbe" secondAttribute="trailing" type="default" id="hdl-a7-RZ1"/>
+                            <constraint firstItem="uAU-Ny-2pG" firstAttribute="centerY" secondItem="2vY-9Z-sbe" secondAttribute="centerY" type="default" id="rPN-3V-YRV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="G1n-wR-fZz"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <connections>
                         <outlet property="scrollView" destination="OgY-Xb-ByL" id="Kiy-R8-TWf"/>
-                        <outlet property="spinner" destination="uAU-Ny-2pG" id="8lm-VB-Tsm"/>
+                        <outlet property="spinner" destination="uAU-Ny-2pG" id="vnb-eK-xh6"/>
                         <outlet property="titleBarButtonItem" destination="Ke3-Bu-PIi" id="sEf-9U-Yxj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcB-eC-7CH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="-718"/>
+            <point key="canvasLocation" x="1092" y="-1102"/>
         </scene>
         <!--Attributed String View Controller-->
         <scene sceneID="gLb-0h-ktC">
@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAy-AQ-hfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="-761"/>
+            <point key="canvasLocation" x="1997" y="-693"/>
         </scene>
         <!--Navigation Controller - Featured-->
         <scene sceneID="Gyg-Fg-G3G">
@@ -234,12 +234,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="KoD-Fn-UKn" kind="relationship" relationship="viewControllers" id="chA-X1-EgI"/>
-                        <segue destination="hGz-bj-N0N" kind="relationship" relationship="viewControllers" id="lFu-yg-kON"/>
+                        <segue destination="Dwv-8X-obE" kind="relationship" relationship="viewControllers" id="6kP-2s-mQw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8f-wN-POa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-937" y="-1191"/>
+            <point key="canvasLocation" x="-987" y="-1187"/>
         </scene>
         <!--Recent Flickr PhotosTVC - Recents-->
         <scene sceneID="dYH-ig-YnO">
@@ -273,7 +273,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="XnZ-hg-mA1" kind="push" id="bLP-Jz-NX4"/>
+                                    <segue destination="XnZ-hg-mA1" kind="replace" splitViewControllerTargetIndex="1" id="bLP-Jz-NX4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -287,67 +287,34 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gy-zm-IuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="177" y="-789"/>
+            <point key="canvasLocation" x="191" y="-789"/>
         </scene>
         <!--Navigation Controller - Recents-->
-        <scene sceneID="JGV-eD-rQs">
+        <scene sceneID="oFz-1h-2jR">
             <objects>
-                <navigationController id="hGz-bj-N0N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recents" id="fBH-ZB-kxr"/>
+                <navigationController id="Dwv-8X-obE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Recents" id="RcO-te-Bdi"/>
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hNa-44-vSk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="een-GI-1zD">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="eyF-k4-3qf" kind="relationship" relationship="rootViewController" id="PE1-Gj-w88"/>
+                        <segue destination="eyF-k4-3qf" kind="relationship" relationship="rootViewController" id="EAH-yu-kke"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YK4-a9-Hfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6a-5f-qsV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-335" y="-789"/>
+            <point key="canvasLocation" x="-355" y="-789"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AttributedStringViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AttributedStringViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="FlickrPhotoTVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlickrPhotoTVC.h"/>
-        </class>
-        <class className="FlickrPhotoTagTVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlickrPhotoTagTVC.h"/>
-        </class>
-        <class className="ImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="titleBarButtonItem" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RecentFlickrPhotosTVC" superclassName="FlickrPhotoTVC">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentFlickrPhotosTVC.h"/>
-        </class>
-        <class className="UIRefreshControl" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bLP-Jz-NX4"/>
+        <segue reference="ZQj-W0-LC9"/>
     </inferredMetricsTieBreakers>
 </document>
