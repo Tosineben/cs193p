@@ -38,6 +38,9 @@
         photo.title = [photoDictionary[FLICKR_PHOTO_TITLE] description];
         photo.subtitle = [[photoDictionary valueForKeyPath:FLICKR_PHOTO_DESCRIPTION] description];
         photo.imageURL = [[FlickrFetcher urlForPhoto:photoDictionary format:FlickrPhotoFormatLarge] absoluteString];
+        photo.latitude = photoDictionary[FLICKR_LATITUDE];
+        photo.longitude = photoDictionary[FLICKR_LONGITUDE];
+        photo.thumbnailURLString = [[FlickrFetcher urlForPhoto:photoDictionary format:FlickrPhotoFormatSquare] absoluteString];
         photo.whoTook = [Photographer photographerWithName:[photoDictionary[FLICKR_PHOTO_OWNER] description]
                                     inManagedObjectContext:context];
     }
