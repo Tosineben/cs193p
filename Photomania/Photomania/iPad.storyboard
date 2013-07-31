@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Demo Photographer Map View Controller-->
+        <!--Demo Photographer Map View Controller - Photographers-->
         <scene sceneID="QnA-ct-mMy">
             <objects>
                 <viewController id="oFa-Xa-5gE" customClass="DemoPhotographerMapViewController" sceneMemberID="viewController">
@@ -22,9 +22,10 @@
                             <constraint firstItem="RAY-Tk-8Zf" firstAttribute="trailing" secondItem="7fS-6v-iyW" secondAttribute="trailing" type="default" id="qxv-DN-XZW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ciZ-1v-4Ys"/>
+                    <navigationItem key="navigationItem" title="Photographers" id="ciZ-1v-4Ys"/>
                     <connections>
                         <outlet property="mapView" destination="RAY-Tk-8Zf" id="Uoc-UM-a9j"/>
+                        <segue destination="aI8-BZ-QTd" kind="push" identifier="setPhotographer:" id="dvx-y9-0Nd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lmu-nA-px7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -36,7 +37,7 @@
             <objects>
                 <viewController id="aI8-BZ-QTd" customClass="PhotosByPhotographerMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bP2-rx-oqI">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AVG-ly-rSl"/>
@@ -49,23 +50,50 @@
                             <constraint firstItem="AVG-ly-rSl" firstAttribute="leading" secondItem="bP2-rx-oqI" secondAttribute="leading" type="default" id="uBi-6e-ka2"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="k6L-iF-Zdr"/>
                     <connections>
                         <outlet property="mapView" destination="AVG-ly-rSl" id="BhQ-LH-p2U"/>
+                        <segue destination="BW5-Zu-LCm" kind="push" identifier="setPhoto:" id="C4V-Me-fVn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1GQ-Aw-Fsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1626" y="-310"/>
         </scene>
-        <!--Image View Controller-->
+        <!--Photo View Controller-->
         <scene sceneID="BLy-aq-AbL">
             <objects>
-                <viewController id="BW5-Zu-LCm" customClass="ImageViewController" sceneMemberID="viewController">
+                <viewController id="BW5-Zu-LCm" customClass="PhotoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kE4-iJ-YIU">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMc-kg-cnn"/>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCf-pg-kLq">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="218" type="user" id="ixs-ZB-P30"/>
+                                    <constraint firstAttribute="width" constant="218" type="user" id="m4s-Fh-oaJ"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="I3g-8o-6KQ" kind="embed" identifier="Embed Map of Photo" id="b4M-yd-dl4"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uMc-kg-cnn" firstAttribute="leading" secondItem="kE4-iJ-YIU" secondAttribute="leading" type="default" id="3xv-HL-hEc"/>
+                            <constraint firstAttribute="trailing" secondItem="RCf-pg-kLq" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="Jty-Gq-F9d"/>
+                            <constraint firstItem="uMc-kg-cnn" firstAttribute="bottom" secondItem="kE4-iJ-YIU" secondAttribute="bottom" type="default" id="Lyt-u3-SXI"/>
+                            <constraint firstItem="uMc-kg-cnn" firstAttribute="trailing" secondItem="kE4-iJ-YIU" secondAttribute="trailing" type="default" id="iQ3-L9-dyq"/>
+                            <constraint firstItem="uMc-kg-cnn" firstAttribute="top" secondItem="kE4-iJ-YIU" secondAttribute="top" type="default" id="lJf-vG-I01"/>
+                            <constraint firstItem="RCf-pg-kLq" firstAttribute="top" secondItem="kE4-iJ-YIU" secondAttribute="top" constant="20" symbolic="YES" type="user" id="rWY-dx-V11"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Hk6-8p-kGX"/>
+                    <connections>
+                        <outlet property="scrollView" destination="uMc-kg-cnn" id="zbE-K4-j8o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqd-2K-mSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,6 +117,33 @@
             </objects>
             <point key="canvasLocation" x="-78" y="-310"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Bos-sC-tsd">
+            <objects>
+                <viewController id="I3g-8o-6KQ" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ulI-Ff-Olw">
+                        <rect key="frame" x="0.0" y="0.0" width="218" height="218"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pfe-gC-5QW"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pfe-gC-5QW" firstAttribute="top" secondItem="ulI-Ff-Olw" secondAttribute="top" type="default" id="MGf-YR-bFf"/>
+                            <constraint firstItem="Pfe-gC-5QW" firstAttribute="leading" secondItem="ulI-Ff-Olw" secondAttribute="leading" type="default" id="ZmS-GA-NFO"/>
+                            <constraint firstItem="Pfe-gC-5QW" firstAttribute="trailing" secondItem="ulI-Ff-Olw" secondAttribute="trailing" type="default" id="sHR-Zs-pIl"/>
+                            <constraint firstItem="Pfe-gC-5QW" firstAttribute="bottom" secondItem="ulI-Ff-Olw" secondAttribute="bottom" type="default" id="tuS-m0-YUS"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="mapView" destination="Pfe-gC-5QW" id="unZ-DB-OSq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIZ-Q4-K1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3368" y="-247"/>
+        </scene>
     </scenes>
     <classes>
         <class className="DemoPhotographerMapViewController" superclassName="PhotographerMapViewController">
@@ -110,6 +165,9 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PhotoViewController" superclassName="ImageViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewController.h"/>
         </class>
         <class className="PhotographerMapViewController" superclassName="MapViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotographerMapViewController.h"/>

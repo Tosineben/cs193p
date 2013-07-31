@@ -47,7 +47,7 @@
     [self reload];
 }
 
-
+// when someone taps a pin, trigger segue
 - (void)mapView:(MKMapView *)mapView
  annotationView:(MKAnnotationView *)view
 calloutAccessoryControlTapped:(UIControl *)control
@@ -57,19 +57,17 @@ calloutAccessoryControlTapped:(UIControl *)control
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"setPhotographer:"])
+    if ([segue.identifier isEqualToString:@"setPhotographer:"] &&
+        [sender isKindOfClass:[MKAnnotationView class]])
     {
-        if ([sender isKindOfClass:[MKAnnotationView class]])
+        MKAnnotationView *aView = (MKAnnotationView *)sender;
+        if ([aView.annotation isKindOfClass:[Photographer class]])
         {
-            MKAnnotationView *aView = (MKAnnotationView *)sender;
-            if ([aView.annotation isKindOfClass:[Photographer class]])
+            Photographer *photographer = (Photographer *)aView.annotation;
+            if ([segue.destinationViewController respondsToSelector:@selector(setPhotographer:)])
             {
-                Photographer *photographer = (Photographer *)aView.annotation;
-                if ([segue.destinationViewController respondsToSelector:@selector(setPhotographer:)])
-                {
-                    [segue.destinationViewController performSelector:@selector(setPhotographer:)
-                                                          withObject:photographer];
-                }
+                [segue.destinationViewController performSelector:@selector(setPhotographer:)
+                                                      withObject:photographer];
             }
         }
     }

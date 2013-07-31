@@ -33,12 +33,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"Embed Map of Photo"])
+    if ([segue.identifier isEqualToString:@"Embed Map of Photo"] &&
+        [segue.destinationViewController isKindOfClass:[MapViewController class]])
     {
-        if ([segue.destinationViewController isKindOfClass:[MapViewController class]])
-        {
-            self.mapVC = segue.destinationViewController;
-        }
+        // can't set annotations yet because outlets aren't set
+        // so just grab a hold of it for now, and set annotations when view loads
+        self.mapVC = segue.destinationViewController;
     }
 }
 
