@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9672F03B17AC171B004DB4BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9672F03A17AC171B004DB4BE /* MobileCoreServices.framework */; };
+		9672F03E17AC1F39004DB4BE /* CMMotionManager+Shared.m in Sources */ = {isa = PBXBuildFile; fileRef = 9672F03D17AC1F39004DB4BE /* CMMotionManager+Shared.m */; };
+		9672F04017AC1F83004DB4BE /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9672F03F17AC1F83004DB4BE /* CoreMotion.framework */; };
 		9695796217A990D500C6437C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9695796117A990D500C6437C /* UIKit.framework */; };
 		9695796417A990D500C6437C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9695796317A990D500C6437C /* Foundation.framework */; };
 		9695796617A990D500C6437C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9695796517A990D500C6437C /* CoreGraphics.framework */; };
@@ -22,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9672F03A17AC171B004DB4BE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9672F03C17AC1F39004DB4BE /* CMMotionManager+Shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMMotionManager+Shared.h"; sourceTree = "<group>"; };
+		9672F03D17AC1F39004DB4BE /* CMMotionManager+Shared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMMotionManager+Shared.m"; sourceTree = "<group>"; };
+		9672F03F17AC1F83004DB4BE /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		9695795E17A990D500C6437C /* KitchenSink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenSink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9695796117A990D500C6437C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9695796317A990D500C6437C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9672F04017AC1F83004DB4BE /* CoreMotion.framework in Frameworks */,
+				9672F03B17AC171B004DB4BE /* MobileCoreServices.framework in Frameworks */,
 				9695796217A990D500C6437C /* UIKit.framework in Frameworks */,
 				9695796417A990D500C6437C /* Foundation.framework in Frameworks */,
 				9695796617A990D500C6437C /* CoreGraphics.framework in Frameworks */,
@@ -76,6 +85,8 @@
 		9695796017A990D500C6437C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9672F03F17AC1F83004DB4BE /* CoreMotion.framework */,
+				9672F03A17AC171B004DB4BE /* MobileCoreServices.framework */,
 				9695796117A990D500C6437C /* UIKit.framework */,
 				9695796317A990D500C6437C /* Foundation.framework */,
 				9695796517A990D500C6437C /* CoreGraphics.framework */,
@@ -91,6 +102,8 @@
 				9695798817A991B600C6437C /* AskerViewController.m */,
 				9695798417A9911900C6437C /* KitchenSinkViewController.h */,
 				9695798517A9911900C6437C /* KitchenSinkViewController.m */,
+				9672F03C17AC1F39004DB4BE /* CMMotionManager+Shared.h */,
+				9672F03D17AC1F39004DB4BE /* CMMotionManager+Shared.m */,
 				9695796817A990D500C6437C /* Supporting Files */,
 			);
 			path = KitchenSink;
@@ -182,6 +195,7 @@
 				9695797217A990D600C6437C /* AppDelegate.m in Sources */,
 				9695798617A9911900C6437C /* KitchenSinkViewController.m in Sources */,
 				9695798917A991B600C6437C /* AskerViewController.m in Sources */,
+				9672F03E17AC1F39004DB4BE /* CMMotionManager+Shared.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

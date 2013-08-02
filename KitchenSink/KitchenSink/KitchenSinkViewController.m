@@ -8,15 +8,147 @@
 
 #import "KitchenSinkViewController.h"
 #import "AskerViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
+#import "CMMotionManager+Shared.h"
 
-@interface KitchenSinkViewController () <UIActionSheetDelegate>
+@interface KitchenSinkViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *kitchenSink;
 @property (weak, nonatomic) NSTimer *drainTimer; // system has strong pointer when scheduled
 @property (weak, nonatomic) UIActionSheet *sinkControlActionSheet;
+@property (strong, nonatomic) UIPopoverController *imagePickerPopover;
+
 @end
 
 @implementation KitchenSinkViewController
+
+#pragma mark - drift
+
+#define DRIFT_HZ 10
+#define DRIFT_RATE 10
+
+- (void)startDrift
+{
+    CMMotionManager *motionManager = [CMMotionManager sharedMotionManager];
+    if ([motionManager isAccelerometerAvailable])
+    {
+        [motionManager setAccelerometerUpdateInterval:1/DRIFT_HZ];
+        [motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue]
+                                            withHandler:^(CMAccelerometerData *data, NSError *error) {
+            // move each view based on acceleration
+            for (UIView *view in self.kitchenSink.subviews)
+            {
+                CGPoint center = view.center;
+                center.x += data.acceleration.x * DRIFT_RATE;
+                center.y -= data.acceleration.y * DRIFT_RATE;
+                view.center = center;
+                
+                // if off screen, remove view
+                if (!CGRectContainsRect(self.kitchenSink.bounds, view.frame) &&
+                    !CGRectIntersectsRect(self.kitchenSink.bounds, view.frame))
+                {
+                    [view removeFromSuperview];
+                }
+            }
+        }];
+    }
+}
+
+- (void)stopDrift
+{
+    CMMotionManager *motionManager = [CMMotionManager sharedMotionManager];
+    [motionManager stopAccelerometerUpdates];
+}
+
+- (IBAction)addFoodPhoto:(UIBarButtonItem *)sender
+{
+    [self presentImagePicker:UIImagePickerControllerSourceTypeSavedPhotosAlbum sender:sender];
+}
+
+- (IBAction)takeFoodPhoto:(UIBarButtonItem *)sender
+{
+    [self presentImagePicker:UIImagePickerControllerSourceTypeCamera sender:sender];
+}
+
+- (void)presentImagePicker:(UIImagePickerControllerSourceType) type
+                    sender:(UIBarButtonItem *)sender
+{
+    if (!self.imagePickerPopover && [UIImagePickerController isSourceTypeAvailable:type])
+    {
+        NSArray *mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:type];
+        if ([mediaTypes containsObject:(NSString *)kUTTypeImage])
+        {
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            picker.sourceType = type;
+            picker.mediaTypes = @[(NSString *)kUTTypeImage];
+            picker.allowsEditing = YES;
+            picker.delegate = self;
+            
+            BOOL isPad = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+            if ((type != UIImagePickerControllerSourceTypeCamera) && isPad)
+            {
+                self.imagePickerPopover = [[UIPopoverController alloc] initWithContentViewController:picker];
+                [self.imagePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+                self.imagePickerPopover.delegate = self; // do to respond to popover delegate
+            }
+            else
+            {
+                // just doing a camera, modal it
+                [self presentViewController:picker animated:YES completion:nil];
+            }
+        }
+    }
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    self.imagePickerPopover = nil;
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#define MAX_IMAGE_WIDTH 200
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    // get image and drop into kitchen sink
+    
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    if (!image)
+    {
+        image = info[UIImagePickerControllerOriginalImage];
+    }
+    
+    if (image)
+    {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        
+        // camera takes huge photos, scale it down
+        CGRect frame = imageView.frame;
+        if (frame.size.width > MAX_IMAGE_WIDTH)
+        {
+            frame.size.height = (frame.size.height / frame.size.width) * MAX_IMAGE_WIDTH;
+            frame.size.width = MAX_IMAGE_WIDTH;
+        }
+        imageView.frame = frame;
+        
+        [self setRandomLocationForView:imageView];
+        [self.kitchenSink addSubview:imageView];
+    }
+    
+    if (self.imagePickerPopover)
+    {
+        [self.imagePickerPopover dismissPopoverAnimated:YES]; // take popover off screen
+        self.imagePickerPopover = nil; // now we don't care about it anymore
+    }
+    else
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
 
 #define SINK_CONTROL @"Sink Controls"
 #define SINK_CONTROL_STOP_DRAIN @"Stopper Drain"
@@ -76,6 +208,8 @@
 {
     [super viewDidAppear:animated];
     [self startDrainTimer];
+    [self startDrift];
+    
     [self cleanDish];
 }
 
@@ -84,6 +218,7 @@
 {
     [super viewWillDisappear:animated];
     [self stopDrainTimer];
+    [self stopDrift];
 }
 
 #define DRAIN_DURATION 3.0
@@ -190,13 +325,13 @@
     foodLabel.text = food;
     foodLabel.font = [UIFont systemFontOfSize:46];
     foodLabel.backgroundColor = [UIColor clearColor];
+    [foodLabel sizeToFit];
     [self setRandomLocationForView:foodLabel];
     [self.kitchenSink addSubview:foodLabel];
 }
 
 - (void)setRandomLocationForView:(UIView *)view
 {
-    [view sizeToFit];
     CGRect sinkBounds = CGRectInset(self.kitchenSink.bounds, view.frame.size.width/2, view.frame.size.height/2);
     CGFloat x = arc4random() % (int)sinkBounds.size.width + view.frame.size.width/2;
     CGFloat y = arc4random() % (int)sinkBounds.size.height + view.frame.size.height/2;
