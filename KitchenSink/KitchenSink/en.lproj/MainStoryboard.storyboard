@@ -14,12 +14,22 @@
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxm-BC-AEJ">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JVh-Y0-hsb" appends="YES" id="ChN-pK-vdE"/>
+                                </connections>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNC-WV-LEd">
                                 <items>
                                     <barButtonItem title="Add Food" id="QO4-Ay-Zfg">
                                         <connections>
                                             <segue destination="Has-1A-bjh" kind="modal" identifier="Ask" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="wpN-Wk-zXT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ptr-5u-ySa"/>
+                                    <barButtonItem title="Control Sink" id="ZcV-je-q76">
+                                        <connections>
+                                            <action selector="controlSink:" destination="GvB-0X-kBo" id="yfH-5x-FK6"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -36,8 +46,16 @@
                             <constraint firstItem="vxm-BC-AEJ" firstAttribute="leading" secondItem="gWn-sr-WWb" secondAttribute="leading" type="default" id="x1W-FO-uGd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="kitchenSink" destination="vxm-BC-AEJ" id="iIA-d2-T5v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0DE-JV-Uej" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JVh-Y0-hsb">
+                    <connections>
+                        <action selector="tap:" destination="GvB-0X-kBo" id="WKd-0q-KFX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-13" y="-280"/>
         </scene>
@@ -126,7 +144,10 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KitchenSinkViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancelAsking:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="controlSink:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="doneAsking:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="tap:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="kitchenSink" candidateClass="UIView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

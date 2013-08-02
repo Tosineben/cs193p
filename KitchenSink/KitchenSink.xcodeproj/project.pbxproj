@@ -89,9 +89,9 @@
 				9695797917A990D600C6437C /* MainStoryboard.storyboard */,
 				9695798717A991B600C6437C /* AskerViewController.h */,
 				9695798817A991B600C6437C /* AskerViewController.m */,
-				9695796817A990D500C6437C /* Supporting Files */,
 				9695798417A9911900C6437C /* KitchenSinkViewController.h */,
 				9695798517A9911900C6437C /* KitchenSinkViewController.m */,
+				9695796817A990D500C6437C /* Supporting Files */,
 			);
 			path = KitchenSink;
 			sourceTree = "<group>";
@@ -306,6 +306,7 @@
 				9695798317A990D600C6437C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
