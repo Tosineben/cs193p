@@ -16,7 +16,7 @@
 		9641150017AC40D5008D70E7 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 964114FF17AC40D5008D70E7 /* Photo.m */; };
 		9641150317AC40D5008D70E7 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641150217AC40D5008D70E7 /* Tag.m */; };
 		9641150617AC4656008D70E7 /* SharedDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641150517AC4656008D70E7 /* SharedDocument.m */; };
-		9641150917AC50A0008D70E7 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641150817AC50A0008D70E7 /* CoreDataTableViewController.m */; };
+		9641157A17B06B87008D70E7 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641157917B06B87008D70E7 /* CoreDataTableViewController.m */; };
 		96819FCE17A738E800AE2829 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96819FCD17A738E800AE2829 /* UIKit.framework */; };
 		96819FD017A738E800AE2829 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96819FCF17A738E800AE2829 /* Foundation.framework */; };
 		96819FD217A738E800AE2829 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96819FD117A738E800AE2829 /* CoreGraphics.framework */; };
@@ -54,8 +54,8 @@
 		9641150217AC40D5008D70E7 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		9641150417AC4656008D70E7 /* SharedDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedDocument.h; sourceTree = "<group>"; };
 		9641150517AC4656008D70E7 /* SharedDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedDocument.m; sourceTree = "<group>"; };
-		9641150717AC50A0008D70E7 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = ../../Photomania/Photomania/CoreDataTableViewController.h; sourceTree = "<group>"; };
-		9641150817AC50A0008D70E7 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = ../../Photomania/Photomania/CoreDataTableViewController.m; sourceTree = "<group>"; };
+		9641157817B06B87008D70E7 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		9641157917B06B87008D70E7 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		96819FCA17A738E800AE2829 /* SPoT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPoT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96819FCD17A738E800AE2829 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		96819FCF17A738E800AE2829 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,8 +126,8 @@
 		9641150A17AC50A6008D70E7 /* CDTVC */ = {
 			isa = PBXGroup;
 			children = (
-				9641150717AC50A0008D70E7 /* CoreDataTableViewController.h */,
-				9641150817AC50A0008D70E7 /* CoreDataTableViewController.m */,
+				9641157817B06B87008D70E7 /* CoreDataTableViewController.h */,
+				9641157917B06B87008D70E7 /* CoreDataTableViewController.m */,
 			);
 			name = CDTVC;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 				9641150017AC40D5008D70E7 /* Photo.m in Sources */,
 				9641150317AC40D5008D70E7 /* Tag.m in Sources */,
 				9641150617AC4656008D70E7 /* SharedDocument.m in Sources */,
-				9641150917AC50A0008D70E7 /* CoreDataTableViewController.m in Sources */,
+				9641157A17B06B87008D70E7 /* CoreDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

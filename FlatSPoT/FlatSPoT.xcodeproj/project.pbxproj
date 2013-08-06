@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9641151E17B069C3008D70E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9641151D17B069C3008D70E7 /* UIKit.framework */; };
+		9641152017B069C3008D70E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9641151F17B069C3008D70E7 /* Foundation.framework */; };
+		9641152217B069C3008D70E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9641152117B069C3008D70E7 /* CoreGraphics.framework */; };
+		9641152817B069C3008D70E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9641152617B069C3008D70E7 /* InfoPlist.strings */; };
+		9641152A17B069C3008D70E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641152917B069C3008D70E7 /* main.m */; };
+		9641152E17B069C3008D70E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641152D17B069C3008D70E7 /* AppDelegate.m */; };
+		9641153017B069C3008D70E7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9641152F17B069C3008D70E7 /* Default.png */; };
+		9641153217B069C3008D70E7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9641153117B069C3008D70E7 /* Default@2x.png */; };
+		9641153417B069C3008D70E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9641153317B069C3008D70E7 /* Default-568h@2x.png */; };
+		9641156117B06A0C008D70E7 /* FlickrCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641154117B06A0C008D70E7 /* FlickrCache.m */; };
+		9641156217B06A0C008D70E7 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641154517B06A0C008D70E7 /* FlickrFetcher.m */; };
+		9641156317B06A0C008D70E7 /* FlickrPhotoTagTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641154717B06A0C008D70E7 /* FlickrPhotoTagTVC.m */; };
+		9641156417B06A0C008D70E7 /* FlickrPhotoTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641154917B06A0C008D70E7 /* FlickrPhotoTVC.m */; };
+		9641156517B06A0C008D70E7 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641154B17B06A0C008D70E7 /* ImageViewController.m */; };
+		9641156617B06A0C008D70E7 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9641154C17B06A0C008D70E7 /* iPhone.storyboard */; };
+		9641156717B06A0C008D70E7 /* NetworkActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641154E17B06A0C008D70E7 /* NetworkActivityIndicator.m */; };
+		9641156817B06A0C008D70E7 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641155017B06A0C008D70E7 /* Photo.m */; };
+		9641156917B06A0C008D70E7 /* Photo+Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641155217B06A0C008D70E7 /* Photo+Flickr.m */; };
+		9641156A17B06A0C008D70E7 /* Recent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641155417B06A0C008D70E7 /* Recent.m */; };
+		9641156B17B06A0C008D70E7 /* Recent+Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641155617B06A0C008D70E7 /* Recent+Photo.m */; };
+		9641156D17B06A0C008D70E7 /* SharedDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641155A17B06A0C008D70E7 /* SharedDocument.m */; };
+		9641156E17B06A0C008D70E7 /* FlatSPoT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9641155B17B06A0C008D70E7 /* FlatSPoT.xcdatamodeld */; };
+		9641156F17B06A0C008D70E7 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641155E17B06A0C008D70E7 /* Tag.m */; };
+		9641157017B06A0C008D70E7 /* Tag+Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641156017B06A0C008D70E7 /* Tag+Flickr.m */; };
+		9641157517B06AD6008D70E7 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9641157417B06AD6008D70E7 /* CoreDataTableViewController.m */; };
+		9641157717B06B12008D70E7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9641157617B06B12008D70E7 /* CoreData.framework */; };
+		9641157C17B06BE1008D70E7 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9641157B17B06BE1008D70E7 /* CoreText.framework */; };
+		964115C617B06CD4008D70E7 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9641159517B06CD4008D70E7 /* Lato-Black.ttf */; };
+		964115C717B06CD4008D70E7 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9641159617B06CD4008D70E7 /* Lato-BlackItalic.ttf */; };
+		964115C817B06CD4008D70E7 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9641159717B06CD4008D70E7 /* Lato-Bold.ttf */; };
+		964115C917B06CD4008D70E7 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9641159817B06CD4008D70E7 /* Lato-BoldItalic.ttf */; };
+		964115CA17B06CD4008D70E7 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9641159917B06CD4008D70E7 /* Lato-Hairline.ttf */; };
+		964115CB17B06CD4008D70E7 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9641159A17B06CD4008D70E7 /* Lato-HairlineItalic.ttf */; };
+		964115CC17B06CD4008D70E7 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9641159B17B06CD4008D70E7 /* Lato-Italic.ttf */; };
+		964115CD17B06CD4008D70E7 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9641159C17B06CD4008D70E7 /* Lato-Light.ttf */; };
+		964115CE17B06CD4008D70E7 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9641159D17B06CD4008D70E7 /* Lato-LightItalic.ttf */; };
+		964115CF17B06CD4008D70E7 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9641159E17B06CD4008D70E7 /* Lato-Regular.ttf */; };
+		964115D017B06CD4008D70E7 /* FUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115A317B06CD4008D70E7 /* FUIAlertView.m */; };
+		964115D117B06CD4008D70E7 /* FUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115A517B06CD4008D70E7 /* FUIButton.m */; };
+		964115D217B06CD4008D70E7 /* FUICellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115A717B06CD4008D70E7 /* FUICellBackgroundView.m */; };
+		964115D317B06CD4008D70E7 /* FUIPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115A917B06CD4008D70E7 /* FUIPopoverBackgroundView.m */; };
+		964115D417B06CD4008D70E7 /* FUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115AB17B06CD4008D70E7 /* FUISegmentedControl.m */; };
+		964115D517B06CD5008D70E7 /* FUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115AD17B06CD4008D70E7 /* FUISwitch.m */; };
+		964115D617B06CD5008D70E7 /* UIBarButtonItem+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115AF17B06CD4008D70E7 /* UIBarButtonItem+FlatUI.m */; };
+		964115D717B06CD5008D70E7 /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115B117B06CD4008D70E7 /* UIColor+FlatUI.m */; };
+		964115D817B06CD5008D70E7 /* UIFont+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115B317B06CD4008D70E7 /* UIFont+FlatUI.m */; };
+		964115D917B06CD5008D70E7 /* UIImage+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115B517B06CD4008D70E7 /* UIImage+FlatUI.m */; };
+		964115DA17B06CD5008D70E7 /* UINavigationBar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115B717B06CD4008D70E7 /* UINavigationBar+FlatUI.m */; };
+		964115DB17B06CD5008D70E7 /* UIPopoverController+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115B917B06CD4008D70E7 /* UIPopoverController+FlatUI.m */; };
+		964115DC17B06CD5008D70E7 /* UIProgressView+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115BB17B06CD4008D70E7 /* UIProgressView+FlatUI.m */; };
+		964115DD17B06CD5008D70E7 /* UISlider+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115BD17B06CD4008D70E7 /* UISlider+FlatUI.m */; };
+		964115DE17B06CD5008D70E7 /* UIStepper+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115BF17B06CD4008D70E7 /* UIStepper+FlatUI.m */; };
+		964115DF17B06CD5008D70E7 /* UITabBar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115C117B06CD4008D70E7 /* UITabBar+FlatUI.m */; };
+		964115E017B06CD5008D70E7 /* UITableViewCell+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115C317B06CD4008D70E7 /* UITableViewCell+FlatUI.m */; };
+		964115E117B06CD5008D70E7 /* UIToolbar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 964115C517B06CD4008D70E7 /* UIToolbar+FlatUI.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9641151A17B069C3008D70E7 /* FlatSPoT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlatSPoT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9641151D17B069C3008D70E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9641151F17B069C3008D70E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9641152117B069C3008D70E7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9641152517B069C3008D70E7 /* FlatSPoT-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlatSPoT-Info.plist"; sourceTree = "<group>"; };
+		9641152717B069C3008D70E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9641152917B069C3008D70E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9641152B17B069C3008D70E7 /* FlatSPoT-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlatSPoT-Prefix.pch"; sourceTree = "<group>"; };
+		9641152C17B069C3008D70E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9641152D17B069C3008D70E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9641152F17B069C3008D70E7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9641153117B069C3008D70E7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9641153317B069C3008D70E7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9641154017B06A0C008D70E7 /* FlickrCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlickrCache.h; path = ../FlickrCache.h; sourceTree = "<group>"; };
+		9641154117B06A0C008D70E7 /* FlickrCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlickrCache.m; path = ../FlickrCache.m; sourceTree = "<group>"; };
+		9641154317B06A0C008D70E7 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		9641154417B06A0C008D70E7 /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		9641154517B06A0C008D70E7 /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		9641154617B06A0C008D70E7 /* FlickrPhotoTagTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoTagTVC.h; sourceTree = "<group>"; };
+		9641154717B06A0C008D70E7 /* FlickrPhotoTagTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoTagTVC.m; sourceTree = "<group>"; };
+		9641154817B06A0C008D70E7 /* FlickrPhotoTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoTVC.h; sourceTree = "<group>"; };
+		9641154917B06A0C008D70E7 /* FlickrPhotoTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoTVC.m; sourceTree = "<group>"; };
+		9641154A17B06A0C008D70E7 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		9641154B17B06A0C008D70E7 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		9641154C17B06A0C008D70E7 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		9641154D17B06A0C008D70E7 /* NetworkActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkActivityIndicator.h; sourceTree = "<group>"; };
+		9641154E17B06A0C008D70E7 /* NetworkActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkActivityIndicator.m; sourceTree = "<group>"; };
+		9641154F17B06A0C008D70E7 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		9641155017B06A0C008D70E7 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		9641155117B06A0C008D70E7 /* Photo+Flickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+Flickr.h"; sourceTree = "<group>"; };
+		9641155217B06A0C008D70E7 /* Photo+Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+Flickr.m"; sourceTree = "<group>"; };
+		9641155317B06A0C008D70E7 /* Recent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recent.h; sourceTree = "<group>"; };
+		9641155417B06A0C008D70E7 /* Recent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recent.m; sourceTree = "<group>"; };
+		9641155517B06A0C008D70E7 /* Recent+Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Recent+Photo.h"; sourceTree = "<group>"; };
+		9641155617B06A0C008D70E7 /* Recent+Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Recent+Photo.m"; sourceTree = "<group>"; };
+		9641155917B06A0C008D70E7 /* SharedDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedDocument.h; sourceTree = "<group>"; };
+		9641155A17B06A0C008D70E7 /* SharedDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedDocument.m; sourceTree = "<group>"; };
+		9641155C17B06A0C008D70E7 /* FlatSPoT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlatSPoT.xcdatamodel; sourceTree = "<group>"; };
+		9641155D17B06A0C008D70E7 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
+		9641155E17B06A0C008D70E7 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
+		9641155F17B06A0C008D70E7 /* Tag+Flickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tag+Flickr.h"; sourceTree = "<group>"; };
+		9641156017B06A0C008D70E7 /* Tag+Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tag+Flickr.m"; sourceTree = "<group>"; };
+		9641157317B06AD6008D70E7 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		9641157417B06AD6008D70E7 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		9641157617B06B12008D70E7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9641157B17B06BE1008D70E7 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		9641159517B06CD4008D70E7 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		9641159617B06CD4008D70E7 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		9641159717B06CD4008D70E7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		9641159817B06CD4008D70E7 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		9641159917B06CD4008D70E7 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		9641159A17B06CD4008D70E7 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		9641159B17B06CD4008D70E7 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		9641159C17B06CD4008D70E7 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		9641159D17B06CD4008D70E7 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		9641159E17B06CD4008D70E7 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		964115A117B06CD4008D70E7 /* FlatUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatUIKit.h; sourceTree = "<group>"; };
+		964115A217B06CD4008D70E7 /* FUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUIAlertView.h; sourceTree = "<group>"; };
+		964115A317B06CD4008D70E7 /* FUIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUIAlertView.m; sourceTree = "<group>"; };
+		964115A417B06CD4008D70E7 /* FUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUIButton.h; sourceTree = "<group>"; };
+		964115A517B06CD4008D70E7 /* FUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUIButton.m; sourceTree = "<group>"; };
+		964115A617B06CD4008D70E7 /* FUICellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUICellBackgroundView.h; sourceTree = "<group>"; };
+		964115A717B06CD4008D70E7 /* FUICellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUICellBackgroundView.m; sourceTree = "<group>"; };
+		964115A817B06CD4008D70E7 /* FUIPopoverBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUIPopoverBackgroundView.h; sourceTree = "<group>"; };
+		964115A917B06CD4008D70E7 /* FUIPopoverBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUIPopoverBackgroundView.m; sourceTree = "<group>"; };
+		964115AA17B06CD4008D70E7 /* FUISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUISegmentedControl.h; sourceTree = "<group>"; };
+		964115AB17B06CD4008D70E7 /* FUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUISegmentedControl.m; sourceTree = "<group>"; };
+		964115AC17B06CD4008D70E7 /* FUISwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUISwitch.h; sourceTree = "<group>"; };
+		964115AD17B06CD4008D70E7 /* FUISwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUISwitch.m; sourceTree = "<group>"; };
+		964115AE17B06CD4008D70E7 /* UIBarButtonItem+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+FlatUI.h"; sourceTree = "<group>"; };
+		964115AF17B06CD4008D70E7 /* UIBarButtonItem+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+FlatUI.m"; sourceTree = "<group>"; };
+		964115B017B06CD4008D70E7 /* UIColor+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatUI.h"; sourceTree = "<group>"; };
+		964115B117B06CD4008D70E7 /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatUI.m"; sourceTree = "<group>"; };
+		964115B217B06CD4008D70E7 /* UIFont+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FlatUI.h"; sourceTree = "<group>"; };
+		964115B317B06CD4008D70E7 /* UIFont+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FlatUI.m"; sourceTree = "<group>"; };
+		964115B417B06CD4008D70E7 /* UIImage+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FlatUI.h"; sourceTree = "<group>"; };
+		964115B517B06CD4008D70E7 /* UIImage+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FlatUI.m"; sourceTree = "<group>"; };
+		964115B617B06CD4008D70E7 /* UINavigationBar+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+FlatUI.h"; sourceTree = "<group>"; };
+		964115B717B06CD4008D70E7 /* UINavigationBar+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+FlatUI.m"; sourceTree = "<group>"; };
+		964115B817B06CD4008D70E7 /* UIPopoverController+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+FlatUI.h"; sourceTree = "<group>"; };
+		964115B917B06CD4008D70E7 /* UIPopoverController+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+FlatUI.m"; sourceTree = "<group>"; };
+		964115BA17B06CD4008D70E7 /* UIProgressView+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+FlatUI.h"; sourceTree = "<group>"; };
+		964115BB17B06CD4008D70E7 /* UIProgressView+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+FlatUI.m"; sourceTree = "<group>"; };
+		964115BC17B06CD4008D70E7 /* UISlider+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISlider+FlatUI.h"; sourceTree = "<group>"; };
+		964115BD17B06CD4008D70E7 /* UISlider+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISlider+FlatUI.m"; sourceTree = "<group>"; };
+		964115BE17B06CD4008D70E7 /* UIStepper+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStepper+FlatUI.h"; sourceTree = "<group>"; };
+		964115BF17B06CD4008D70E7 /* UIStepper+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStepper+FlatUI.m"; sourceTree = "<group>"; };
+		964115C017B06CD4008D70E7 /* UITabBar+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+FlatUI.h"; sourceTree = "<group>"; };
+		964115C117B06CD4008D70E7 /* UITabBar+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+FlatUI.m"; sourceTree = "<group>"; };
+		964115C217B06CD4008D70E7 /* UITableViewCell+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+FlatUI.h"; sourceTree = "<group>"; };
+		964115C317B06CD4008D70E7 /* UITableViewCell+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+FlatUI.m"; sourceTree = "<group>"; };
+		964115C417B06CD4008D70E7 /* UIToolbar+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+FlatUI.h"; sourceTree = "<group>"; };
+		964115C517B06CD4008D70E7 /* UIToolbar+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+FlatUI.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9641151717B069C3008D70E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9641157C17B06BE1008D70E7 /* CoreText.framework in Frameworks */,
+				9641157717B06B12008D70E7 /* CoreData.framework in Frameworks */,
+				9641151E17B069C3008D70E7 /* UIKit.framework in Frameworks */,
+				9641152017B069C3008D70E7 /* Foundation.framework in Frameworks */,
+				9641152217B069C3008D70E7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9641151117B069C3008D70E7 = {
+			isa = PBXGroup;
+			children = (
+				9641152317B069C3008D70E7 /* FlatSPoT */,
+				9641151C17B069C3008D70E7 /* Frameworks */,
+				9641151B17B069C3008D70E7 /* Products */,
+				9641159417B06CD4008D70E7 /* Resources */,
+				9641159F17B06CD4008D70E7 /* Vendor */,
+			);
+			sourceTree = "<group>";
+		};
+		9641151B17B069C3008D70E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9641151A17B069C3008D70E7 /* FlatSPoT.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9641151C17B069C3008D70E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9641157B17B06BE1008D70E7 /* CoreText.framework */,
+				9641157617B06B12008D70E7 /* CoreData.framework */,
+				9641151D17B069C3008D70E7 /* UIKit.framework */,
+				9641151F17B069C3008D70E7 /* Foundation.framework */,
+				9641152117B069C3008D70E7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9641152317B069C3008D70E7 /* FlatSPoT */ = {
+			isa = PBXGroup;
+			children = (
+				9641154C17B06A0C008D70E7 /* iPhone.storyboard */,
+				9641154617B06A0C008D70E7 /* FlickrPhotoTagTVC.h */,
+				9641154717B06A0C008D70E7 /* FlickrPhotoTagTVC.m */,
+				9641154817B06A0C008D70E7 /* FlickrPhotoTVC.h */,
+				9641154917B06A0C008D70E7 /* FlickrPhotoTVC.m */,
+				9641154A17B06A0C008D70E7 /* ImageViewController.h */,
+				9641154B17B06A0C008D70E7 /* ImageViewController.m */,
+				9641157317B06AD6008D70E7 /* CoreDataTableViewController.h */,
+				9641157417B06AD6008D70E7 /* CoreDataTableViewController.m */,
+				9641157217B06A45008D70E7 /* Util */,
+				9641157117B06A1A008D70E7 /* CoreData */,
+				9641154217B06A0C008D70E7 /* FlickrFetcher */,
+				9641152417B069C3008D70E7 /* Supporting Files */,
+			);
+			path = FlatSPoT;
+			sourceTree = "<group>";
+		};
+		9641152417B069C3008D70E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9641152C17B069C3008D70E7 /* AppDelegate.h */,
+				9641152D17B069C3008D70E7 /* AppDelegate.m */,
+				9641152517B069C3008D70E7 /* FlatSPoT-Info.plist */,
+				9641152617B069C3008D70E7 /* InfoPlist.strings */,
+				9641152917B069C3008D70E7 /* main.m */,
+				9641152B17B069C3008D70E7 /* FlatSPoT-Prefix.pch */,
+				9641152F17B069C3008D70E7 /* Default.png */,
+				9641153117B069C3008D70E7 /* Default@2x.png */,
+				9641153317B069C3008D70E7 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9641154217B06A0C008D70E7 /* FlickrFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				9641154017B06A0C008D70E7 /* FlickrCache.h */,
+				9641154117B06A0C008D70E7 /* FlickrCache.m */,
+				9641154317B06A0C008D70E7 /* FlickrAPIKey.h */,
+				9641154417B06A0C008D70E7 /* FlickrFetcher.h */,
+				9641154517B06A0C008D70E7 /* FlickrFetcher.m */,
+			);
+			path = FlickrFetcher;
+			sourceTree = "<group>";
+		};
+		9641157117B06A1A008D70E7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9641154F17B06A0C008D70E7 /* Photo.h */,
+				9641155017B06A0C008D70E7 /* Photo.m */,
+				9641155117B06A0C008D70E7 /* Photo+Flickr.h */,
+				9641155217B06A0C008D70E7 /* Photo+Flickr.m */,
+				9641155317B06A0C008D70E7 /* Recent.h */,
+				9641155417B06A0C008D70E7 /* Recent.m */,
+				9641155517B06A0C008D70E7 /* Recent+Photo.h */,
+				9641155617B06A0C008D70E7 /* Recent+Photo.m */,
+				9641155B17B06A0C008D70E7 /* FlatSPoT.xcdatamodeld */,
+				9641155D17B06A0C008D70E7 /* Tag.h */,
+				9641155E17B06A0C008D70E7 /* Tag.m */,
+				9641155F17B06A0C008D70E7 /* Tag+Flickr.h */,
+				9641156017B06A0C008D70E7 /* Tag+Flickr.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		9641157217B06A45008D70E7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9641154D17B06A0C008D70E7 /* NetworkActivityIndicator.h */,
+				9641154E17B06A0C008D70E7 /* NetworkActivityIndicator.m */,
+				9641155917B06A0C008D70E7 /* SharedDocument.h */,
+				9641155A17B06A0C008D70E7 /* SharedDocument.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		9641159417B06CD4008D70E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9641159517B06CD4008D70E7 /* Lato-Black.ttf */,
+				9641159617B06CD4008D70E7 /* Lato-BlackItalic.ttf */,
+				9641159717B06CD4008D70E7 /* Lato-Bold.ttf */,
+				9641159817B06CD4008D70E7 /* Lato-BoldItalic.ttf */,
+				9641159917B06CD4008D70E7 /* Lato-Hairline.ttf */,
+				9641159A17B06CD4008D70E7 /* Lato-HairlineItalic.ttf */,
+				9641159B17B06CD4008D70E7 /* Lato-Italic.ttf */,
+				9641159C17B06CD4008D70E7 /* Lato-Light.ttf */,
+				9641159D17B06CD4008D70E7 /* Lato-LightItalic.ttf */,
+				9641159E17B06CD4008D70E7 /* Lato-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9641159F17B06CD4008D70E7 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				964115A017B06CD4008D70E7 /* FlatUIKit */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		964115A017B06CD4008D70E7 /* FlatUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				964115A117B06CD4008D70E7 /* FlatUIKit.h */,
+				964115A217B06CD4008D70E7 /* FUIAlertView.h */,
+				964115A317B06CD4008D70E7 /* FUIAlertView.m */,
+				964115A417B06CD4008D70E7 /* FUIButton.h */,
+				964115A517B06CD4008D70E7 /* FUIButton.m */,
+				964115A617B06CD4008D70E7 /* FUICellBackgroundView.h */,
+				964115A717B06CD4008D70E7 /* FUICellBackgroundView.m */,
+				964115A817B06CD4008D70E7 /* FUIPopoverBackgroundView.h */,
+				964115A917B06CD4008D70E7 /* FUIPopoverBackgroundView.m */,
+				964115AA17B06CD4008D70E7 /* FUISegmentedControl.h */,
+				964115AB17B06CD4008D70E7 /* FUISegmentedControl.m */,
+				964115AC17B06CD4008D70E7 /* FUISwitch.h */,
+				964115AD17B06CD4008D70E7 /* FUISwitch.m */,
+				964115AE17B06CD4008D70E7 /* UIBarButtonItem+FlatUI.h */,
+				964115AF17B06CD4008D70E7 /* UIBarButtonItem+FlatUI.m */,
+				964115B017B06CD4008D70E7 /* UIColor+FlatUI.h */,
+				964115B117B06CD4008D70E7 /* UIColor+FlatUI.m */,
+				964115B217B06CD4008D70E7 /* UIFont+FlatUI.h */,
+				964115B317B06CD4008D70E7 /* UIFont+FlatUI.m */,
+				964115B417B06CD4008D70E7 /* UIImage+FlatUI.h */,
+				964115B517B06CD4008D70E7 /* UIImage+FlatUI.m */,
+				964115B617B06CD4008D70E7 /* UINavigationBar+FlatUI.h */,
+				964115B717B06CD4008D70E7 /* UINavigationBar+FlatUI.m */,
+				964115B817B06CD4008D70E7 /* UIPopoverController+FlatUI.h */,
+				964115B917B06CD4008D70E7 /* UIPopoverController+FlatUI.m */,
+				964115BA17B06CD4008D70E7 /* UIProgressView+FlatUI.h */,
+				964115BB17B06CD4008D70E7 /* UIProgressView+FlatUI.m */,
+				964115BC17B06CD4008D70E7 /* UISlider+FlatUI.h */,
+				964115BD17B06CD4008D70E7 /* UISlider+FlatUI.m */,
+				964115BE17B06CD4008D70E7 /* UIStepper+FlatUI.h */,
+				964115BF17B06CD4008D70E7 /* UIStepper+FlatUI.m */,
+				964115C017B06CD4008D70E7 /* UITabBar+FlatUI.h */,
+				964115C117B06CD4008D70E7 /* UITabBar+FlatUI.m */,
+				964115C217B06CD4008D70E7 /* UITableViewCell+FlatUI.h */,
+				964115C317B06CD4008D70E7 /* UITableViewCell+FlatUI.m */,
+				964115C417B06CD4008D70E7 /* UIToolbar+FlatUI.h */,
+				964115C517B06CD4008D70E7 /* UIToolbar+FlatUI.m */,
+			);
+			path = FlatUIKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9641151917B069C3008D70E7 /* FlatSPoT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9641153D17B069C3008D70E7 /* Build configuration list for PBXNativeTarget "FlatSPoT" */;
+			buildPhases = (
+				9641151617B069C3008D70E7 /* Sources */,
+				9641151717B069C3008D70E7 /* Frameworks */,
+				9641151817B069C3008D70E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlatSPoT;
+			productName = FlatSPoT;
+			productReference = 9641151A17B069C3008D70E7 /* FlatSPoT.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9641151217B069C3008D70E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = CS193p;
+			};
+			buildConfigurationList = 9641151517B069C3008D70E7 /* Build configuration list for PBXProject "FlatSPoT" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9641151117B069C3008D70E7;
+			productRefGroup = 9641151B17B069C3008D70E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9641151917B069C3008D70E7 /* FlatSPoT */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9641151817B069C3008D70E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9641152817B069C3008D70E7 /* InfoPlist.strings in Resources */,
+				9641153017B069C3008D70E7 /* Default.png in Resources */,
+				9641153217B069C3008D70E7 /* Default@2x.png in Resources */,
+				9641153417B069C3008D70E7 /* Default-568h@2x.png in Resources */,
+				9641156617B06A0C008D70E7 /* iPhone.storyboard in Resources */,
+				964115C617B06CD4008D70E7 /* Lato-Black.ttf in Resources */,
+				964115C717B06CD4008D70E7 /* Lato-BlackItalic.ttf in Resources */,
+				964115C817B06CD4008D70E7 /* Lato-Bold.ttf in Resources */,
+				964115C917B06CD4008D70E7 /* Lato-BoldItalic.ttf in Resources */,
+				964115CA17B06CD4008D70E7 /* Lato-Hairline.ttf in Resources */,
+				964115CB17B06CD4008D70E7 /* Lato-HairlineItalic.ttf in Resources */,
+				964115CC17B06CD4008D70E7 /* Lato-Italic.ttf in Resources */,
+				964115CD17B06CD4008D70E7 /* Lato-Light.ttf in Resources */,
+				964115CE17B06CD4008D70E7 /* Lato-LightItalic.ttf in Resources */,
+				964115CF17B06CD4008D70E7 /* Lato-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9641151617B069C3008D70E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9641152A17B069C3008D70E7 /* main.m in Sources */,
+				9641152E17B069C3008D70E7 /* AppDelegate.m in Sources */,
+				9641156117B06A0C008D70E7 /* FlickrCache.m in Sources */,
+				9641156217B06A0C008D70E7 /* FlickrFetcher.m in Sources */,
+				9641156317B06A0C008D70E7 /* FlickrPhotoTagTVC.m in Sources */,
+				9641156417B06A0C008D70E7 /* FlickrPhotoTVC.m in Sources */,
+				9641156517B06A0C008D70E7 /* ImageViewController.m in Sources */,
+				9641156717B06A0C008D70E7 /* NetworkActivityIndicator.m in Sources */,
+				9641156817B06A0C008D70E7 /* Photo.m in Sources */,
+				9641156917B06A0C008D70E7 /* Photo+Flickr.m in Sources */,
+				9641156A17B06A0C008D70E7 /* Recent.m in Sources */,
+				9641156B17B06A0C008D70E7 /* Recent+Photo.m in Sources */,
+				9641156D17B06A0C008D70E7 /* SharedDocument.m in Sources */,
+				9641156E17B06A0C008D70E7 /* FlatSPoT.xcdatamodeld in Sources */,
+				9641156F17B06A0C008D70E7 /* Tag.m in Sources */,
+				9641157017B06A0C008D70E7 /* Tag+Flickr.m in Sources */,
+				9641157517B06AD6008D70E7 /* CoreDataTableViewController.m in Sources */,
+				964115D017B06CD4008D70E7 /* FUIAlertView.m in Sources */,
+				964115D117B06CD4008D70E7 /* FUIButton.m in Sources */,
+				964115D217B06CD4008D70E7 /* FUICellBackgroundView.m in Sources */,
+				964115D317B06CD4008D70E7 /* FUIPopoverBackgroundView.m in Sources */,
+				964115D417B06CD4008D70E7 /* FUISegmentedControl.m in Sources */,
+				964115D517B06CD5008D70E7 /* FUISwitch.m in Sources */,
+				964115D617B06CD5008D70E7 /* UIBarButtonItem+FlatUI.m in Sources */,
+				964115D717B06CD5008D70E7 /* UIColor+FlatUI.m in Sources */,
+				964115D817B06CD5008D70E7 /* UIFont+FlatUI.m in Sources */,
+				964115D917B06CD5008D70E7 /* UIImage+FlatUI.m in Sources */,
+				964115DA17B06CD5008D70E7 /* UINavigationBar+FlatUI.m in Sources */,
+				964115DB17B06CD5008D70E7 /* UIPopoverController+FlatUI.m in Sources */,
+				964115DC17B06CD5008D70E7 /* UIProgressView+FlatUI.m in Sources */,
+				964115DD17B06CD5008D70E7 /* UISlider+FlatUI.m in Sources */,
+				964115DE17B06CD5008D70E7 /* UIStepper+FlatUI.m in Sources */,
+				964115DF17B06CD5008D70E7 /* UITabBar+FlatUI.m in Sources */,
+				964115E017B06CD5008D70E7 /* UITableViewCell+FlatUI.m in Sources */,
+				964115E117B06CD5008D70E7 /* UIToolbar+FlatUI.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9641152617B069C3008D70E7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9641152717B069C3008D70E7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9641153B17B069C3008D70E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9641153C17B069C3008D70E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9641153E17B069C3008D70E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlatSPoT/FlatSPoT-Prefix.pch";
+				INFOPLIST_FILE = "FlatSPoT/FlatSPoT-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9641153F17B069C3008D70E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FlatSPoT/FlatSPoT-Prefix.pch";
+				INFOPLIST_FILE = "FlatSPoT/FlatSPoT-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9641151517B069C3008D70E7 /* Build configuration list for PBXProject "FlatSPoT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9641153B17B069C3008D70E7 /* Debug */,
+				9641153C17B069C3008D70E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9641153D17B069C3008D70E7 /* Build configuration list for PBXNativeTarget "FlatSPoT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9641153E17B069C3008D70E7 /* Debug */,
+				9641153F17B069C3008D70E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9641155B17B06A0C008D70E7 /* FlatSPoT.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9641155C17B06A0C008D70E7 /* FlatSPoT.xcdatamodel */,
+			);
+			currentVersion = 9641155C17B06A0C008D70E7 /* FlatSPoT.xcdatamodel */;
+			path = FlatSPoT.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9641151217B069C3008D70E7 /* Project object */;
+}
